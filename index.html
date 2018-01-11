@@ -46,13 +46,11 @@
             stroke-dasharray: 2400;
             stroke-dashoffset: 2400;
             transition: stroke-dashoffset 3s;
-        }</style><script type="text/javascript">let head = document.getElementById('head-js');
+        }</style><script type="text/javascript">let head  = document.getElementById('head-js');
+
         function addStyleSheets (href) {//Функция добавления стилей
             let link = document.createElement('link');
             link.rel = 'stylesheet';
             link.href = href;
             head.appendChild(link);
-        }
-        document.addEventListener('DOMContentLoaded', function () {//после загрузки страницы
-            addStyleSheets('css/preloader.min.css');
-        });</script><div class="preloader" id="preloader-js"></div><div class="preloader-i" id="preloader-i-js"><div class="preloader-i__svg"><div class="preloader__logo"><img src="img/preloader.png" class="preloader__logo-image"></div><svg class="preloader__deco preloader__deco-lines" viewBox="0 0 300 415"><path d="M-250,3h800v400h-800V3z" class="preloader-line"/></svg></div></div><main class="main">Ееееееее главная страница</main></body></html>
+        }</script><div class="preloader" id="preloader-js"></div><div class="preloader-i" id="preloader-i-js"><div class="preloader-i__svg"><div class="preloader__logo"><img src="img/preloader.png" class="preloader__logo-image" onload="addStyleSheets('css/preloader.min.css')"></div><svg class="preloader__deco preloader__deco-lines" viewBox="0 0 300 415"><path d="M-250,3h800v400h-800V3z" class="preloader-line"/></svg></div></div><main class="main">Ееееееее главная страница</main></body></html>
