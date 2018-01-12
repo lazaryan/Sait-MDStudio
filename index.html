@@ -1,17 +1,16 @@
-<!DOCTYPE html><html lang="en"><head id="head-js"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="author" content="Сергей Лазарян Почта:lazaryan99@mail.ru lazaryan99@gmail.com ВК:https://vk.com/sergejl Телефон:89185966155"><meta name="Generator" content="Sublime Text3"><meta name="description" content="Заказать профессиональный дизайн интерьера от студии MDStudio. Услуги современного дизайнера и архитектора. Наш телефон:+7(951)-519-2141"><meta name="copyright" content="MDStydio"><meta name="keywords" content="Архитектор , архитектура , дизайн , 3d визуализация , дизайн интерьера , Мадунс Давид , MDStudio , MDStudio-design , MD Studio-design , MD Studio , дизайнер , Таганрог , Москва"><title>MDstudio</title><link rel="stylesheet" type="text/css" href="css/normalize.min.css"><link rel="stylesheet" type="text/css" href="css/main.min.css"></head><body><!--Прелоадер--><style type="text/css">.preloader{
-            position: fixed;
-            z-index: 100;
-            width: 100vw;
+<!DOCTYPE html><html lang="en"><head id="head-js"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="author" content="Сергей Лазарян Почта:lazaryan99@mail.ru lazaryan99@gmail.com ВК:https://vk.com/sergejl Телефон:89185966155"><meta name="Generator" content="Sublime Text3"><meta name="description" content="Заказать профессиональный дизайн интерьера от студии MDStudio. Услуги современного дизайнера и архитектора. Наш телефон:+7(951)-519-2141"><meta name="copyright" content="MDStydio"><meta name="keywords" content="Архитектор , архитектура , дизайн , 3d визуализация , дизайн интерьера , Мадунс Давид , MDStudio , MDStudio-design , MD Studio-design , MD Studio , дизайнер , Таганрог , Москва"><title>MDstudio</title><link rel="stylesheet" type="text/css" href="css/normalize.min.css"><link rel="stylesheet" type="text/css" href="css/main.min.css"></head><body><!--Стили прелоадера--><style type="text/css">.preloader , .preloader-i{
+    		position: fixed;
+    		width: 100vw;
             height: 100vh;
+    	}
+        .preloader{
+            z-index: 100;
             background-color:#262424;
             opacity: 1;
         }
         .preloader-i{
-            position: fixed;
             z-index: 99;
             background-color: #000;
-            width: 100vw;
-            height: 100vh;
         }
         .preloader__logo{
             width: 95vw;
@@ -19,7 +18,7 @@
             margin-left: 2.5vw;
             margin-top: 5vh;
         }
-        .preloader__logo-image{
+        .preloader__logo-image , .preloader__deco{
             width: 100%;
             height: 100%;
         }
@@ -33,8 +32,6 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
             overflow: hidden;
         }
         .preloader__deco-lines{
@@ -46,11 +43,19 @@
             stroke-dasharray: 2400;
             stroke-dashoffset: 2400;
             transition: stroke-dashoffset 3s;
-        }</style><script type="text/javascript">let head  = document.getElementById('head-js');
+        }</style><!--Js для прелоадера--><script type="text/javascript">let head  = document.getElementById('head-js');
 
         function addStyleSheets (href) {//Функция добавления стилей
             let link = document.createElement('link');
             link.rel = 'stylesheet';
             link.href = href;
             head.appendChild(link);
-        }</script><div class="preloader" id="preloader-js"></div><div class="preloader-i" id="preloader-i-js"><div class="preloader-i__svg"><div class="preloader__logo"><img src="img/preloader.png" class="preloader__logo-image" onload="addStyleSheets('css/preloader.min.css')"></div><svg class="preloader__deco preloader__deco-lines" viewBox="0 0 300 415"><path d="M-250,3h800v400h-800V3z" class="preloader-line"/></svg></div></div><main class="main">Ееееееее главная страница</main></body></html>
+        }  
+
+        function nonePreloader (){
+        	addStyleSheets('css/preloader1.min.css');
+
+        	setTimeout( ()=>{
+    			addStyleSheets('css/preloader2.min.css');
+    		},3500);
+        };</script><div class="preloader" id="preloader-js"></div><div class="preloader-i" id="preloader-i-js"><div class="preloader-i__svg"><div class="preloader__logo"><img src="img/preloader.png" class="preloader__logo-image" onload="nonePreloader()"></div><svg class="preloader__deco preloader__deco-lines" viewBox="0 0 300 415"><path d="M-250,3h800v400h-800V3z" class="preloader-line"/></svg></div></div><main class="main">Ееееееее главная страница</main></body></html>
