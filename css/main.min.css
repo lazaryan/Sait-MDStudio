@@ -1,1 +1,10 @@
-*{margin:0;padding:0}.canvas1{width:500px;height:500px;border:2px solid #000}
+* {
+  margin: 0;
+  padding: 0; }
+
+.canvas1 {
+  width: 500px;
+  height: 500px;
+  border: 2px solid #000; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNDLFVBQVM7RUFDVCxXQUFVLEVBQUc7O0FBR2I7RUFDQyxhQUFZO0VBQ1osY0FBYTtFQUNiLHVCQUFzQixFQUFHIiwiZmlsZSI6Im1haW4uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiKiB7XG5cdG1hcmdpbjogMDtcblx0cGFkZGluZzogMDsgfVxuXG4uY2FudmFzIHtcblx0JjEge1xuXHRcdHdpZHRoOiA1MDBweDtcblx0XHRoZWlnaHQ6IDUwMHB4O1xuXHRcdGJvcmRlcjogMnB4IHNvbGlkICMwMDA7IH0gfVxuIl19 */
