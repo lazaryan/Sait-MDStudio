@@ -10,24 +10,69 @@
 
         <title>MDStudio</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.min.css">
-        <link rel="stylesheet" href="css/main_nav.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main_nav.min.css">
+        <link rel="stylesheet" type="text/css" href="css/content.min.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
-<body>
-        <div class="start-nav">
-        <div class="start-nav__item">
-                <p class="start__link start__link_arh">Arhitecture</p>
+<body class="body">
+        <!--Стартовое меню-->
+        <div class="start-nav js-start-nav">
+                <a href="#arh" id="arh" class="start-nav__item">
+                        <h2 class="start-nav__text">Архитектура</h2>
+                </a>
+                <a href="#dis" id="dis" class="start-nav__item">
+                        <h2 class="start-nav__text">Дизайн</h2>
+                </a>
+                <a href="#3d" id="3d" class="start-nav__item border_none">
+                        <h2 class="start-nav__text">3d визуализация</h2>
+                </a>
         </div>
-        <div class="start-nav__item">
-                <p class="start__link start__link_dis">Interior Design</p>
+        <!--Основной контент-->
+        <main class="main">
+        <nav class="nav js-nav">
+                <div class="nav__links">
+                        <div class="nav__item">
+                                <a href="#home" class="nav__item-link js-nav__item-link">Главное</a>
+                        </div>
+                </div>
+        </nav>
+        <div class="nav_click-i">
+                <a href="#menu" class="nav_click js-nav_click">
+                        <span class="nav_click__line js-nav_click__line"></span>
+                </a>
         </div>
-        <div class="start-nav__item">
-                <p class="start__link start__link_vis">3D visualization</p>
+        <!--Архитектура-->
+        <div class="content _none" id="content_arh">
+        <div class="content-i">
+                <div class="name">
+                        <h1 class="name_text">Архитектура</h1>
+                </div>
         </div>
 </div>
+
+        <!--Дизайн-->
+        <div class="content _none" id="content_dis">
+        <div class="content-i">
+                <div class="name">
+                        <h1 class="name_text">Дизайн</h1>
+                </div>
+        </div>
+</div>
+
+        <!--3D визуализация-->
+        <div class="content _none" id="content_3d">
+        <div class="content-i">
+                <div class="name">
+                        <h1 class="name_text">3D Визуализация</h1>
+                </div>
+        </div>
+</div>
+
+</main>
 
 
         <script type="text/javascript" src="js/main.min.js"></script>
