@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.min.css">
         <link rel="stylesheet" type="text/css" href="css/main_nav.min.css">
         <link rel="stylesheet" type="text/css" href="css/content.min.css">
+        <link rel="stylesheet" type="text/css" href="css/about_us.min.css">
 
         <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 </head>
@@ -36,16 +37,19 @@
         <nav class="nav js-nav">
                 <div class="nav__links">
                         <div class="nav__item">
-                                <a href="#home" class="nav__item-link js-nav__item-link">Главное</a>
+                                <a href="#home" data-value="home" class="nav__item-link js-nav__item-link">Главное</a>
                         </div>
                         <div class="nav__item">
-                                <a href="#arh" class="nav__item-link js-nav__item-link">Архитектура</a>
+                                <a href="#arh" data-value="arh" class="nav__item-link js-nav__item-link">Архитектура</a>
                         </div>
                         <div class="nav__item">
-                                <a href="#dis" class="nav__item-link js-nav__item-link">Дизайн интерьера</a>
+                                <a href="#dis" data-value="dis" class="nav__item-link js-nav__item-link">Дизайн интерьера</a>
                         </div>
                         <div class="nav__item">
-                                <a href="#3d" class="nav__item-link js-nav__item-link">3D визуализация</a>
+                                <a href="#3d" data-value="3d" class="nav__item-link js-nav__item-link">3D визуализация</a>
+                        </div>
+                        <div class="nav__item">
+                                <a href="#about-us" data-value="about-us" class="nav__item-link js-nav__item-link">О нас</a>
                         </div>
                 </div>
         </nav>
@@ -78,6 +82,29 @@
         <div class="content-i">
                 <div class="name">
                         <h1 class="name_text">3D Визуализация</h1>
+                </div>
+        </div>
+</div>
+
+        <!--О нас-->
+        <div class="content _none" id="content_about-us">
+        <div class="content-i">
+                <div class="name">
+                        <h1 class="name_text">О нас</h1>
+                </div>
+                <div class="information">
+                        <div class="my-photo">
+                                <div class="my-photo-i"></div>
+                        </div>
+                        <div class="quote">
+                                <h2 class="information_name">Обо мне</h2>
+                                <div class="quote_text"><q>Пару фраз о себе....цитатка или все такое</q></div>
+                        </div>
+
+                        <div class="information__text">
+                                <h2 class="information_name">О нашей работе</h2>
+                                <div class="information__text-i">Много воды...или не очень</div>
+                        </div>
                 </div>
         </div>
 </div>
