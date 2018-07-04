@@ -42,6 +42,11 @@ nav.forEach((el) => {
                         let block = document.getElementById('content_' + value);
 
                         block.classList.remove('_none');
+
+                        if(value == 'project'){
+                                startMasonry();
+                                console.log('aaaa');
+                        }
                 }
 
                 showMenu();
@@ -81,4 +86,13 @@ function hideContent(){
                 count++;
                 (count % 2 == 1) ? childs[i].classList.remove('js-start-nav_none-l') : childs[i].classList.remove('js-start-nav_none-r');
         }
+}
+
+/*Проекты*/
+function startMasonry(){
+        let msnry = new Masonry('.js-grid', {
+                itemSelector: '.js-grid__item',
+                columnWidth: '.js-grid__item',
+                percentPosition: true
+        });
 }
