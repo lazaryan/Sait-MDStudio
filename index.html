@@ -26,13 +26,46 @@
         <!--Стартовое меню-->
         <div class="start-nav js-start-nav">
                 <a href="#arh" id="arh" class="start-nav__item">
-                        <h2 class="start-nav__text">Arhitecture</h2>
+                        <svg class="start-nav__text" fill="#fff">
+                                <defs>
+                                        <mask id="start-nav__text-mask1" x="0" y="0" width="100%" height="100%" >
+
+                                                <rect class="start-nav__text-alpha" x="0" y="0" width="100%" height="100%"/>
+
+                                                <text class="start-nav__text-i" id="title" x="50%" y="0" dy="70%" fill="#000">Arhitecture</text>
+                                        </mask>
+                                </defs>
+
+                                <rect class="start-nav__text-base1" x="0" y="0" width="100%" height="100%"/>
+                        </svg>
                 </a>
                 <a href="#dis" id="dis" class="start-nav__item">
-                        <h2 class="start-nav__text">Interior Design</h2>
+                        <svg class="start-nav__text" fill="#fff">
+                                <defs>
+                                        <mask id="start-nav__text-mask2" x="0" y="0" width="100%" height="100%" >
+
+                                                <rect class="start-nav__text-alpha" x="0" y="0" width="100%" height="100%"/>
+
+                                                <text class="start-nav__text-i" id="title" x="50%" y="0" dy="70%" fill="#000">Interior Design</text>
+                                        </mask>
+                                </defs>
+
+                                <rect class="start-nav__text-base2" x="0" y="0" width="100%" height="100%"/>
+                        </svg>
                 </a>
-                <a href="#3d" id="3d" class="start-nav__item border_none">
-                        <h2 class="start-nav__text">3D visualization</h2>
+                <a href="#3d" id="visual" class="start-nav__item border_none">
+                        <svg class="start-nav__text" fill="#fff">
+                                <defs>
+                                        <mask id="start-nav__text-mask3" x="0" y="0" width="100%" height="100%" >
+
+                                                <rect class="start-nav__text-alpha" x="0" y="0" width="100%" height="100%"/>
+
+                                                <text class="start-nav__text-i" id="title" x="50%" y="0" dy="70%" fill="#000">3D visualization</text>
+                                        </mask>
+                                </defs>
+
+                                <rect class="start-nav__text-base3" x="0" y="0" width="100%" height="100%"/>
+                        </svg>
                 </a>
         </div>
         <!--Основной контент-->
@@ -151,7 +184,7 @@
 </div>
 
         <!--3D визуализация-->
-        <div class="content _none" id="content_3d">
+        <div class="content _none" id="content_visual">
         <div class="content-i">
                 <div class="name">
                         <h1 class="name_text">3D Визуализация</h1>
@@ -344,7 +377,6 @@
 
 
         <script type="text/javascript" src="js/lib/masonry.pkgd.min.js"></script>
-        <script type="text/javascript" src="js/gallery.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

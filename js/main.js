@@ -2,7 +2,11 @@
 let start_nav = document.querySelector('.js-start-nav');
 
 start_nav.addEventListener("click", function (item)  {
-        let id = item.target.parentNode.getAttribute('id');
+        let target = item.target;
+        let id;
+
+        while((target = target.parentNode) && !(id = target.getAttribute('id')));
+
         if(id){
                 hidePreloader();
                 start_nav.classList.add('js-start-nav_none');
