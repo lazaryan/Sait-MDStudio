@@ -1,0 +1,75 @@
+@import "media"
+
+.content
+	width: 100%
+	min-height: 90vh
+	padding-top: 10vmax
+	transition: .9s
+
+	&-i
+		width: 100%
+		background-color: #fff
+
+	@media #{$desktop}
+		padding-top: 0
+
+._none
+	opacity: 0
+	margin-left: 100vw
+	display: none
+
+.name
+	width: 100%
+	height: 10vh
+
+	&_text
+		text-align: center
+		margin: 0
+		line-height: 8vh
+		font-size: 35px
+
+		@media #{$desktop}
+			text-align: right
+			padding-right: 40px
+
+	@media #{$tablet-strict}
+		height: 15vh
+
+		&_text
+			font-size: 45px
+			line-height: 15vh
+
+
+	@media #{$desktop-strict}
+		height: 15vh
+
+		&_text
+			font-size: 45px
+			line-height: 15vh
+
+	@media #{$large}
+		height: 130px
+
+		&_text
+			font-size: 100px
+			line-height: 130px
+
+.information
+	padding: 0 10px
+	padding-top: 30px
+
+	@media #{$tablet-strict}
+		padding: 0 15px
+		padding-top: 30px
+
+
+	@media #{$desktop-strict}
+		padding: 0 25px
+		padding-top: 30px
+
+	@media #{$large}
+		width: 90vw
+		max-width: 1300px
+		margin: 0 auto
+		padding-top: 30px
+

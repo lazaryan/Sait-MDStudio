@@ -1,0 +1,201 @@
+@import "media"
+
+$color_burger_act: #00F7FF
+
+.grid
+	width: 90%
+	margin: 0 auto
+	position: relative
+	column-count: 2
+
+	@media #{$desktop}
+		column-count: 3
+		width: 100%
+
+	&__item
+		width: 48%
+		margin: 0
+		padding: 0
+		margin-top: -10px
+		cursor: pointer
+
+		&_img
+			width: 100%
+			height: auto
+			margin: 0
+			padding: 0
+
+		@media #{$desktop}
+			width: 32%
+
+.project
+	&__popup
+		width: 100%
+		min-height: 100vh
+		position: fixed
+		background-color: rgba(0, 0, 0, .8)
+		display: none
+		top: 0
+		left: 0
+		z-index: 40
+
+		&_header
+			width: 100%
+			height: 12vh
+
+		&_close
+			width: 30vw
+			height: 100%
+			float: right
+			margin-right: 30px
+			margin-top: 20px
+			cursor: pointer
+			margin-bottom: 5vh
+			max-width: 120px
+
+			&-line
+				width: 100%
+				margin: 0 auto
+				height: 4px
+				margin: 35px 0
+				transform: translateY(-2px)
+				display: block
+				background-color: #fff
+				transform-origin: center left
+				transition: .5s
+
+				&::before,
+				&::after
+					content: ''
+					display: block
+					background-color: #fff
+					height: 4px
+					width: 12vw
+					max-width: 50px
+					transition: .5s
+
+				&::before
+					transform: rotate(45deg) translateY(1px)
+					transform-origin: center left
+
+				&::after
+					transform: rotate(-45deg) translateY(-2px)
+					transform-origin: center left
+
+			&:hover &-line
+				background-color: $color_burger_act
+				transform-origin: center center
+				height: 0
+
+				&::before,
+				&::after
+					background-color: $color_burger_act
+					transform-origin: center center
+					margin-left: 25%
+					width: 70px
+
+				&::before
+					transform: rotate(135deg) translateY(1px)
+
+				&::after
+					transform: rotate(-135deg) translateY(-2px)
+
+		&_content
+			width: 100%
+			height: 70vh
+			clear: both
+			display: flex
+
+		&_prev,
+		&_next
+			height: 100px
+			width: 20%
+			margin-top: 42vh
+			transform: translateY(-50px)
+
+			&-i
+				cursor: pointer
+				width: 70px
+				height: 100%
+
+			&-i:hover &-line
+				background-color: $color_burger_act
+
+				&::before
+					background-color: $color_burger_act
+
+			&-line
+				display: block
+				width: 15vw
+				max-width: 60px
+				height: 4px
+				background-color: #fff
+				margin-top: 20px
+				transition: .5s
+
+				&::before
+					content: ''
+					display: block
+					background-color: #fff
+					height: 4px
+					transition: .5s
+		&_prev
+
+			&-i
+				float: right
+				margin-right: 15px
+
+			&-line
+				transform: rotate(-45deg)
+
+				&::before
+					transform: rotate(90deg)
+					transform-origin: center left
+
+
+		&_next
+
+			&-i
+				float: left
+				margin-left: 15px
+
+			&-line
+				transform: rotate(45deg)
+
+				&::before
+					transform: rotate(-90deg)
+					transform-origin: center right
+
+		&_img
+			width: 60%
+			height: 70vh
+
+			&-i
+				max-width: 100%
+				max-height: 100%
+				display: block
+				margin: 0 auto
+				outline: none
+				pointer-events: none
+				user-select: none
+
+				&:active,
+				&:focus
+					outline: none
+					pointer-events: none
+					user-select: none
+
+._show
+	animation: show_popup_project 1s ease forwards
+	display: block
+
+@keyframes show_popup_project
+	0%
+		display: none
+		opacity: 0
+	1%
+		display: block
+		opacity: 0
+	100%
+		display: block
+		opacity: 1

@@ -1,0 +1,87 @@
+@import "media"
+
+.start-nav
+	width: 100vw
+	overflow: hidden
+	z-index: 33
+	position: fixed
+	background-color: #fff
+	transition: .7s
+
+	&__item
+		display: block
+		width: 100%
+		height: 33.4vh
+		border-bottom: 2px solid #000
+		box-sizing: border-box
+		transition: .7s
+		min-width: 320px
+		outline: none
+
+	&__item:hover &__text-i
+		font-size: 13vw
+
+	&__text
+		width: 100vw
+		height: 100%
+
+		&-i
+			line-height: 33%
+			text-anchor: middle
+			font-size: 12vw
+			letter-spacing: -2px
+			font-weight: 800
+			transition: .5s
+
+		&-base
+			&1
+				mask: url(#start-nav__text-mask1)
+
+			&2
+				mask: url(#start-nav__text-mask2)
+
+			&3
+				mask: url(#start-nav__text-mask3)
+
+#arh
+	background: url('../img/start_menu/Arhitecture.jpg')
+	background-position: 400px -250px
+	background-size: cover
+
+#dis
+	background: url('../img/start_menu/Design.jpg')
+	background-size: cover
+	background-position: -80px -420px
+
+#visual
+	background: url('../img/start_menu/Design.jpg')
+	background-size: cover
+	background-position: -80px -220px
+
+.border_none
+	border: none
+
+.js
+	&-start-nav_none
+		animation: st-m_none .9s ease forwards
+
+		&-l
+			margin-left: -100vw
+		&-r
+			margin-left: 100vw
+
+@keyframes st-m_none
+	0%
+		opacity: 1
+		margin-left: 0
+		display: block
+	90%
+		opacity: 0
+		margin-left: 0
+		display: block
+	100%
+		opacity: 0
+		margin-left: -100vw
+		display: none
+
+
