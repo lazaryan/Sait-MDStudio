@@ -4,18 +4,23 @@ let start_nav = document.querySelector('.js-start-nav');
 start_nav.addEventListener("click", function (item)  {
         let id = item.target.parentNode.getAttribute('id');
         if(id){
+                hidePreloader();
                 start_nav.classList.add('js-start-nav_none');
 
-                let childs      = start_nav.children;
-                let count       = 0;
+                setTimeout(function () {
+                        let childs      = start_nav.children;
+                        let count       = 0;
 
-                for(let i = 0; i < childs.length; i++) {
-                        count++;
-                        (count % 2 == 1) ? childs[i].classList.add('js-start-nav_none-l') : childs[i].classList.add('js-start-nav_none-r');
-                }
+                        for(let i = 0; i < childs.length; i++) {
+                                count++;
+                                (count % 2 == 1) ? childs[i].classList.add('js-start-nav_none-l') : childs[i].classList.add('js-start-nav_none-r');
+                        }
 
-                let block = document.getElementById('content_' + id);
-                block.classList.remove('_none');
+                        let block = document.getElementById('content_' + id);
+                        block.classList.remove('_none');
+                }, 800);
+
+                showPreloader();
         }
 });
 
@@ -34,18 +39,23 @@ nav.forEach((el) => {
                 if(value == "home"){
                         hideContent();
                 }else{
+                        hidePreloader();
                         let content    = document.querySelectorAll('.content');
                         content.forEach(function (item) {
                                 item.classList.add('_none');
                         });
 
-                        let block = document.getElementById('content_' + value);
+                        setTimeout(function () {
+                                let block = document.getElementById('content_' + value);
 
-                        block.classList.remove('_none');
+                                block.classList.remove('_none');
 
-                        if(value == 'project'){
-                                startMasonry();
-                        }
+                                if(value == 'project'){
+                                        startMasonry();
+                                }
+                        }, 700);
+
+                        showPreloader();
                 }
 
                 showMenu();
@@ -133,9 +143,6 @@ popup.addEventListener('click', function(elem) {
         id_min = +id_min.substring(id_min.indexOf('-') + 1, id_min.length);
         id_max = +id_max.substring(id_max.indexOf('-') + 1, id_max.length);
 
-        console.log(id_min, id_max);
-
-
         if(target.classList.contains('js-project__popup_close')){
                 popup.classList.remove('_show');
         }
@@ -157,9 +164,26 @@ popup.addEventListener('click', function(elem) {
                 else
                         showPopUpImage(id_min);
         }
-})
+});
 
-/*let gal = new Gallery({
-        el: '.js-grid_project',
-        items: '.js-grid__item_img'
-})*/
+/*прелоадер*/
+function showPreloader() {
+        setTimeout(function () {
+                let preloader = document.querySelector('.js-preloader')
+                preloader.classList.add('preloader_fadeout');
+                preloader.classList.remove('preloader_fadein');
+
+                document.querySelector('#preloader-svg').classList.remove('preloader__logo-svg');
+        }, 2000);
+}
+
+function hidePreloader() {
+        let preloader = document.querySelector('.js-preloader');
+        document.querySelector('#preloader-svg').classList.add('preloader__logo-svg');
+        preloader.classList.add('preloader_fadein');
+        preloader.classList.remove('preloader_fadeout');
+}
+
+window.onload = function () {
+        showPreloader();
+}
