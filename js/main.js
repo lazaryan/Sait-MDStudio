@@ -45,7 +45,6 @@ nav.forEach((el) => {
 
                         if(value == 'project'){
                                 startMasonry();
-                                console.log('aaaa');
                         }
                 }
 
@@ -96,3 +95,71 @@ function startMasonry(){
                 percentPosition: true
         });
 }
+
+let projects = document.querySelector('.js-grid_project');
+
+projects.addEventListener('click', function (elem) {
+        let target = elem.target;
+
+        if(target.classList.contains('js-grid__item_img')){
+                let id = target.getAttribute('id');
+
+                id = +id.substring(id.indexOf('-') + 1, id.length);
+                showPopUpProgect(id);
+        }
+});
+let popup = document.querySelector('.js-project__popup');
+
+function showPopUpProgect (id) {
+        popup.classList.add('_show');
+
+        showPopUpImage(id);
+}
+
+function showPopUpImage(id) {
+        let src = document.querySelector('#project_item-' + id).getAttribute('src');
+        document.querySelector('.js-project__popup_img-i').setAttribute('src', src);
+
+        document.querySelector('.js-project__popup_number-img').innerHTML = +id;
+}
+
+popup.addEventListener('click', function(elem) {
+        let target = elem.target;
+        let images = document.querySelectorAll('.js-grid__item_img');
+
+        let id_min = images[0].getAttribute('id');
+        let id_max = images[images.length - 1].getAttribute('id');
+
+        id_min = +id_min.substring(id_min.indexOf('-') + 1, id_min.length);
+        id_max = +id_max.substring(id_max.indexOf('-') + 1, id_max.length);
+
+        console.log(id_min, id_max);
+
+
+        if(target.classList.contains('js-project__popup_close')){
+                popup.classList.remove('_show');
+        }
+
+        if(target.classList.contains('js-project__popup_prev')){
+                let id = +document.querySelector('.js-project__popup_number-img').innerHTML;
+
+                if(id != id_min)
+                        showPopUpImage(id - 1);
+                else
+                        showPopUpImage(id_max);
+        }
+
+         if(target.classList.contains('js-project__popup_next')){
+                let id = +document.querySelector('.js-project__popup_number-img').innerHTML;
+
+                if(id != id_max)
+                        showPopUpImage(id + 1);
+                else
+                        showPopUpImage(id_min);
+        }
+})
+
+/*let gal = new Gallery({
+        el: '.js-grid_project',
+        items: '.js-grid__item_img'
+})*/
