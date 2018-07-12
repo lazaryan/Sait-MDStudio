@@ -18,6 +18,7 @@ $color_burger_act: #00F7FF
 		padding: 0
 		margin-top: -10px
 		cursor: pointer
+		overflow: hidden
 
 		&-i
 			width: 100%
@@ -31,55 +32,20 @@ $color_burger_act: #00F7FF
 			padding: 0
 			perspective: 1000px
 			transform: translateZ(-200px)
-			transition: .5s
+			transition: .7s
 			filter: grayscale(.7)
 
 			&:hover
-				transform: rotateX(25deg)
 				filter: grayscale(0)
+				width: 106%
+				margin-left: -3%
 
 			&-block
 				top: 0
 				left: 0
 				z-index: 20
 				position: relative
-
-		&:hover &_fill
-			opacity: 1
-
-			&-1
-				transform: rotateX(10deg)
-
-			&-2
-				transform: rotateX(17deg)
-
-			&-3
-				transform: rotateX(22deg)
-
-		&_fill
-			@media #{$desktop}
-				width: 100%
-				top: 25%
-				height: 73%
-				display: block
-				position: absolute
-				z-index: 1
-				left: 0
-				transition: .5s
-				opacity: 0
-				perspective: 1000px
-
-				&-1
-					z-index: 1
-					background-color: rgba(252, 134, 134, .3)
-
-				&-2
-					z-index: 2
-					background-color: rgba(252, 134, 134, .5)
-
-				&-3
-					z-index: 3
-					background-color: rgba(252, 134, 134, .7)
+				overflow: hidden
 
 		@media #{$desktop}
 			width: 32%
@@ -225,6 +191,7 @@ $color_burger_act: #00F7FF
 		&_img
 			width: 60%
 			height: 70vh
+			position: relative
 
 			&-i
 				max-width: 100%
@@ -240,6 +207,96 @@ $color_burger_act: #00F7FF
 					outline: none
 					pointer-events: none
 					user-select: none
+
+		&_scroll
+			width: 100%
+			height: 20%
+			background-color: rgba(0, 0, 0, .2)
+			position: absolute
+			top: 75%
+			transition: .5s
+
+			&:hover
+				background-color: rgba(0, 0, 0, .5)
+
+			&-i
+				display: flex
+				height: 100%
+				width: 100%
+				justify-content: center
+
+			&__item
+				height: 100%
+				width: 150px
+				margin-right: 5px
+				margin-left: 5px
+
+				&_img
+					height: 100%
+					max-width: 100%
+					opacity: .5
+					transition: .5s
+					user-select: none
+					cursor: pointer
+
+					&:hover
+						opacity: 1
+
+					&:active,
+					&:focus
+						user-select: none
+
+					&_active
+						opacity: 1
+						cursor: default
+
+			&__prev,
+			&__next
+				display: block
+				height: 100%
+				width: 60px
+				position: relative
+				cursor: pointer
+
+				&_line
+					width: 80%
+					height: 2px
+					background-color: #fff
+					margin-left: 10%
+					top: 50%
+					position: absolute
+					transition: .5s
+
+					&::before
+						content: ''
+						display: block
+						height: 2px
+						transition: .5s
+						background-color: #fff
+
+				&:hover &_line
+					background-color: $color_burger_act
+
+					&::before
+						background-color: $color_burger_act
+
+			&__prev
+				&_line
+					transform: translateY(-1px) rotate(-45deg)
+					transform-origin: center left
+
+					&::before
+						transform: rotate(90deg)
+						transform-origin: center left
+
+			&__next
+				&_line
+					transform: translateY(-1px) rotate(45deg)
+					transform-origin: center right
+
+					&::before
+						transform: rotate(-90deg)
+						transform-origin: center right
 
 ._show
 	animation: show_popup_project 1s ease forwards

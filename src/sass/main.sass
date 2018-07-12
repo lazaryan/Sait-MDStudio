@@ -6,6 +6,7 @@ $color_preloader: #DFDFDF
 *
 	margin: 0
 	padding: 0
+	font-family: 'Century Gothic', sans-serif
 
 .main
 	width: 100%
@@ -13,15 +14,13 @@ $color_preloader: #DFDFDF
 	z-index: 1
 	background-color: #fff
 	padding: 0
-	background-color: #fff
 
 .body
 	overflow-X: hidden
-	font-family: 'Poppins', sans-serif
 
 .nav
-	width: 100%
-	min-height: 100vh
+	width: 100vw
+	min-height: 100%
 	padding: 0
 	position: fixed
 	background-color: #000
@@ -248,14 +247,14 @@ $color_preloader: #DFDFDF
 					height: 35px
 
 	&__item
-		height: 40px
+		height: 6.5vmax
 		max-height: 8vh
 		width: 100%
 		transition: .5s
 
 		&:hover,
 		&:focus
-			background-color: #a22
+			background-color: rgba(255, 255, 255, .2)
 
 		&-link
 			display: block
@@ -272,14 +271,14 @@ $color_preloader: #DFDFDF
 			height: 8vh
 
 			&-link
-				font-size: 2.7vw
+				font-size: 2.5vw
 				line-height: 8vh
 
 		@media #{$large}
 			height: 90px
 
 			&-link
-				font-size: 35px
+				font-size: 30px
 				line-height: 90px
 
 .preloader
@@ -309,9 +308,12 @@ $color_preloader: #DFDFDF
 		&-svg
                         stroke: #222
                         fill: none
-                        stroke-dasharray: 1300
+                        stroke-dasharray: 1900
                         opacity: 1
-                        animation: logo_mdst 2.5s cubic-bezier(0, 0.23, 1, 1) infinite alternate
+                        animation: logo_mdst 4s cubic-bezier(.88,.13,.91,.38) infinite alternate
+
+                        &_line
+                        	stroke-width: 7px
 
 @keyframes an_burger
 	0%
@@ -333,14 +335,14 @@ $color_preloader: #DFDFDF
 @keyframes logo_mdst
 	0%
 		opacity: 0
-		stroke-dashoffset: 1300
+		stroke-dashoffset: 1900
 		stroke: #fff
 	2%
 		opacity: 1
-		stroke-dashoffset: 1300
-	30%
+		stroke-dashoffset: 1900
+	20%
 		opacity: 1
-		stroke-dashoffset: 1300
+		stroke-dashoffset: 1900
 	85%
 		opacity: 1
 	90%

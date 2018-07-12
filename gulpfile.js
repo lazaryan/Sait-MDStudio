@@ -58,6 +58,11 @@ gulp.task('styles', () => {
         .pipe(gulp.dest('./dist/css'));
 });
 
+gulp.task('fonts', () => {
+        gulp.src('src/fonts/**/*.*')
+                .pipe(gulp.dest('./dist/fonts'));
+});
+
 gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
         .pipe(gulpif(!IsDevelopment, imgmin({
@@ -98,7 +103,8 @@ gulp.task('watch', () => {
     gulp.watch('src/**/*.+(html|php)', ['html:build', 'html']);
     gulp.watch('src/img/**/*.*', ['img']);
     gulp.watch('src/js/**/*.*', ['js']);
+    gulp.watch('src/font/**/*.*', ['font']);
 });
 
-gulp.task('default', ['styles', 'img', 'html:build', 'html', 'js', 'livereload', 'watch']);
-gulp.task('prod', ['styles', 'html:build', 'html', 'img', 'js']);
+gulp.task('default', ['fonts', 'styles', 'img', 'html:build', 'html', 'js', 'livereload', 'watch']);
+gulp.task('prod', ['fonts', 'styles', 'html:build', 'html', 'img', 'js']);

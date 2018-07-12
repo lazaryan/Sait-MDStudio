@@ -1,0 +1,104 @@
+@import "media"
+
+$color_list_hover: #00F7FF
+
+.arhitecture
+	&__text
+		margin-bottom: 20px
+		line-height: 30px
+		font-size: 15px
+		text-align: center
+
+		@media #{$desktop}
+			text-align: left
+			font-size: 17px
+
+	&__paragraph
+		text-align: center
+		margin-bottom: 30px
+		font-size: 23px
+
+		@media #{$desktop}
+			text-align: left
+			margin-bottom: 35px
+			font-size: 25px
+
+	&__list
+		margin-bottom: 20px
+		width: 100%
+		list-style-type: none
+
+		&_item
+			line-height: 35px
+			text-align: left
+			display: block
+			width: 80%
+			margin: 0 auto
+
+			@media #{$desktop}
+				width: none
+				margin-left: 40px
+
+			&-line
+				display: inline-block
+				width: 18px
+				height: 18px
+
+				&-i
+					display: block
+					width: 80%
+					height: 2px
+					background-color: #000
+					margin: 0 auto
+					margin-top: 50%
+					transform: translateY(-1px)
+					transition: .5s
+
+				&:hover &-i
+					transform: translateY(-1px) rotate(-45deg)
+					background-color: $color_list_hover
+
+			&-text
+				display: inline-block
+				line-height: 40px
+				font-size: 18px
+
+				@media #{$desktop}
+					font-size: 20px
+
+	&__tabel
+		width: 100%
+		margin-bottom: 40px
+		border-spacing: 0
+
+		&_item
+			&-name
+				width: 20%
+				font-weight: 700
+				font-size: 18px
+				border-bottom: 1px solid #C9C9C9
+				border-right: 1px solid #C9C9C9
+				padding: 10px 0
+
+				@media #{$desktop}
+					width: 130px
+					padding: 15px 0
+
+				&_last
+					border-bottom: none
+
+			&-text
+				border-bottom: 1px solid #C9C9C9
+				text-align: center
+				font-weight: 300
+				font-size: 15px
+				line-height: 25px
+				padding: 10px 5px
+
+				&_last
+					border-bottom: none
+
+				@media #{$desktop}
+					padding: 15px 10px
+					text-align: left
+

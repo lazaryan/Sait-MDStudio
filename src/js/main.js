@@ -22,7 +22,7 @@ start_nav.addEventListener("click", function (item)  {
 
                         let block = document.getElementById('content_' + id);
                         block.classList.remove('_none');
-                }, 800);
+                }, 2000);
 
                 showPreloader();
         }
@@ -57,7 +57,7 @@ nav.forEach((el) => {
                                 if(value == 'project'){
                                         startMasonry();
                                 }
-                        }, 700);
+                        }, 4000);
 
                         showPreloader();
                 }
@@ -131,10 +131,40 @@ function showPopUpProgect (id) {
 }
 
 function showPopUpImage(id) {
-        let src = document.querySelector('#project_item-' + id).getAttribute('src');
+        let proj = document.querySelector('#project_item-' + id);
+        let src = proj.getAttribute('src');
         document.querySelector('.js-project__popup_img-i').setAttribute('src', src);
 
         document.querySelector('.js-project__popup_number-img').innerHTML = +id;
+
+        let images = proj.parentNode.querySelectorAll('.js-grid__item_img');
+
+        if(images.length > 1){
+                document.querySelector('.js-project__popup_scroll').classList.remove('_none');
+
+                let scroll = '';
+                scroll +=       '<div class="project__popup_scroll__prev js-project__popup_scroll__prev">' +
+                                        '<span class="project__popup_scroll__prev_line js-project__popup_scroll__prev"></span>' +
+                                '</div>';
+
+                scroll += '<div class="project__popup_scroll__item">'+
+                                        '<img class="project__popup_scroll__item_img js-project__popup_scroll__item_img project__popup_scroll__item_img_active" src="'+ images[0].src +'" data-number="'+ 0 +'"/>' +
+                                '</div>';
+
+                for(let i = 1; i< images.length; i++) {
+                        scroll += '<div class="project__popup_scroll__item">'+
+                                        '<img class="project__popup_scroll__item_img js-project__popup_scroll__item_img" src="'+ images[i].src +'" data-number="'+ i +'"/>' +
+                                '</div>';
+                }
+
+                scroll +=       '<div class="project__popup_scroll__next js-project__popup_scroll__next">' +
+                                        '<span class="project__popup_scroll__next_line js-project__popup_scroll__next"></span>' +
+                                '</div>';
+
+                document.querySelector('.js-project__popup_scroll-i').innerHTML = scroll;
+        }else{
+                document.querySelector('.js-project__popup_scroll').classList.add('_none');
+        }
 }
 
 popup.addEventListener('click', function(elem) {
@@ -147,8 +177,10 @@ popup.addEventListener('click', function(elem) {
         id_min = +id_min.substring(id_min.indexOf('-') + 1, id_min.length);
         id_max = +id_max.substring(id_max.indexOf('-') + 1, id_max.length);
 
+
         if(target.classList.contains('js-project__popup_close')){
                 popup.classList.remove('_show');
+                document.querySelector('.js-project__popup_scroll').classList.add('_none');
         }
 
         if(target.classList.contains('js-project__popup_prev')){
@@ -168,6 +200,54 @@ popup.addEventListener('click', function(elem) {
                 else
                         showPopUpImage(id_min);
         }
+
+        if(target.classList.contains('js-project__popup_scroll__item_img')){
+                document.querySelector('.js-project__popup_img-i').setAttribute('src', target.src);
+                target.parentNode.parentNode.querySelector('.project__popup_scroll__item_img_active').classList.remove('project__popup_scroll__item_img_active');
+                target.classList.add('project__popup_scroll__item_img_active');
+        }
+
+        if(target.classList.contains('js-project__popup_scroll__prev')){
+                let images = document.querySelectorAll('.js-project__popup_scroll__item_img');
+
+                let id_min = +images[0].dataset.number;
+                let id_max = +images[images.length - 1].dataset.number;
+
+                let id = +document.querySelector('.project__popup_scroll__item_img_active').dataset.number;
+                let new_img;
+
+                if(id != id_min){
+                        new_img = document.querySelector('.project__popup_scroll__item_img[data-number="' + (id - 1) +'"]');
+                }else{
+                        new_img = document.querySelector('.project__popup_scroll__item_img[data-number="' + id_max +'"]');
+                }
+
+                new_img.classList.add('project__popup_scroll__item_img_active');
+                document.querySelector('.project__popup_scroll__item_img[data-number="' + id +'"]').classList.remove('project__popup_scroll__item_img_active');
+                document.querySelector('.js-project__popup_img-i').setAttribute('src', new_img.src);
+        }
+
+        if(target.classList.contains('js-project__popup_scroll__next')){
+                let images = document.querySelectorAll('.js-project__popup_scroll__item_img');
+
+                let id_min = +images[0].dataset.number;
+                let id_max = +images[images.length - 1].dataset.number;
+
+                let id = +document.querySelector('.project__popup_scroll__item_img_active').dataset.number;
+                let new_img;
+
+                console.log('aaaaa ', id_min, id_max, id);
+
+                if(id != id_max){
+                        new_img = document.querySelector('.project__popup_scroll__item_img[data-number="' + (id + 1) +'"]');
+                }else{
+                        new_img = document.querySelector('.project__popup_scroll__item_img[data-number="' + id_min +'"]');
+                }
+
+                new_img.classList.add('project__popup_scroll__item_img_active');
+                document.querySelector('.project__popup_scroll__item_img[data-number="' + id +'"]').classList.remove('project__popup_scroll__item_img_active');
+                document.querySelector('.js-project__popup_img-i').setAttribute('src', new_img.src);
+        }
 });
 
 /*прелоадер*/
@@ -178,7 +258,7 @@ function showPreloader() {
                 preloader.classList.remove('preloader_fadein');
 
                 document.querySelector('#preloader-svg').classList.remove('preloader__logo-svg');
-        }, 2000);
+        }, 4000);
 }
 
 function hidePreloader() {
