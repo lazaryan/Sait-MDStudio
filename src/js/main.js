@@ -1,3 +1,12 @@
+"use strict";
+
+/*Для -IE8*/
+if (typeof Element.prototype.addEventListener === 'undefined') {
+    Element.prototype.addEventListener = function (e, callback) {
+      e = 'on' + e;
+      return this.attachEvent(e, callback);
+    };
+}
 /*стартовое меню*/
 let start_nav = document.querySelector('.js-start-nav');
 
@@ -12,13 +21,7 @@ start_nav.addEventListener("click", function (item)  {
                 start_nav.classList.add('js-start-nav_none');
 
                 setTimeout(function () {
-                        let childs      = start_nav.children;
-                        let count       = 0;
-
-                        for(let i = 0; i < childs.length; i++) {
-                                count++;
-                                (count % 2 == 1) ? childs[i].classList.add('js-start-nav_none-l') : childs[i].classList.add('js-start-nav_none-r');
-                        }
+                        hideStartMenu();
 
                         let block = document.getElementById('content_' + id);
                         block.classList.remove('_none');
@@ -28,6 +31,18 @@ start_nav.addEventListener("click", function (item)  {
         }
 });
 
+function hideStartMenu() {
+        start_nav.classList.add('js-start-nav_none');
+
+        let childs      = start_nav.children;
+        let count       = 0;
+
+        for(let i = 0; i < childs.length; i++) {
+                count++;
+                (count % 2 == 1) ? childs[i].classList.add('js-start-nav_none-l') : childs[i].classList.add('js-start-nav_none-r');
+        }
+}
+
 /*меню*/
 let main_nav    = document.querySelector('.js-nav_click');
 
@@ -36,18 +51,22 @@ main_nav.addEventListener('click', showMenu);
 let content     = document.querySelectorAll('.content');
 let nav         = document.querySelectorAll('.js-nav__item-link');
 
-nav.forEach((el) => {
-        el.addEventListener('click', function (item)  {
+for(let i = 0; i < nav.length; i++){
+    nav[i].addEventListener('click', function (item)  {
                 let value = item.target.dataset.value;
 
                 if(value == "home"){
                         hideContent();
                 }else{
                         hidePreloader();
-                        let content    = document.querySelectorAll('.content');
-                        content.forEach(function (item) {
-                                item.classList.add('_none');
-                        });
+
+                        for(let i = 0; i < content.length; i++){
+                                content[i].classList.add('_none');
+                        }
+
+                        if(!start_nav.children[0].classList.contains('js-start-nav_none-l')){
+                                hideStartMenu();
+                        }
 
                         setTimeout(function () {
                                 let block = document.getElementById('content_' + value);
@@ -64,16 +83,16 @@ nav.forEach((el) => {
 
                 showMenu();
         })
-});
+}
 
-content.forEach((el) => {
-        el.addEventListener('click', function ()  {
+for(let i = 0; i < content.length; i++){
+    content[i].addEventListener('click', function ()  {
                 let nav = document.querySelector('.js-nav');
 
                 if(nav.classList.contains('nav_active'))
                         showMenu();
         })
-});
+}
 
 function showMenu(){
         let nav = document.querySelector('.js-nav');
@@ -235,8 +254,6 @@ popup.addEventListener('click', function(elem) {
 
                 let id = +document.querySelector('.project__popup_scroll__item_img_active').dataset.number;
                 let new_img;
-
-                console.log('aaaaa ', id_min, id_max, id);
 
                 if(id != id_max){
                         new_img = document.querySelector('.project__popup_scroll__item_img[data-number="' + (id + 1) +'"]');

@@ -15,6 +15,7 @@ const csso          = require('gulp-csso');
 
 /*js*/
 const uglify        = require('gulp-uglify-es').default;
+const babel         = require('gulp-babel');
 
 /*images*/
 const imgmin        = require('gulp-imagemin');
@@ -73,7 +74,9 @@ gulp.task('img', () => {
 
 gulp.task('js', () => {
     gulp.src('src/js/**/*.*')
-        .pipe(plumber())
+        .pipe(babel({
+            presets: ['env']
+        }))
         .pipe(gulpif(!IsDevelopment, uglify()))
         .pipe(gulp.dest('./dist/js'));
 });
