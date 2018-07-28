@@ -2,116 +2,144 @@
 
 $color_neon: #00f7ff
 
-.order
+.popup-order
+	position: absolute
+	width: 100%
+	background-color: #fff
+	border: 1px solid #000
+	box-sizing: border-box
+	z-index: 46
+
+	@media #{$tablet-strict}
+		width: 80%
+		left: 10%
+
+	@media #{$desktop-strict}
+		width: 76%
+		left: 12%
+
+	@media #{$large}
+		width: 900px
+		left: 50%
+		transform: translateX(-50%)
+
 	&__header
-		width: 100%
+		&_close
+			margin-bottom: 25px
 
-		&-i
-			font-size: 30px
-			line-height: 30px
-			text-align: center
+			&::after
+				content: ''
+				display: block
+				clear: both
 
-	&__type
-		width: 100%
+			&-contain
+				height: 70px
+				width: 70px
+				float: right
+				cursor: pointer
 
-		@media #{$large}
-			width: 94vw
-			margin-left: -7vw
-			max-width: 1500px
-
-		&-i
-			width: 90%
-			max-width: 400px
-			height: 40vw
-			max-height: 250px
-			margin: 0 auto
-			margin-top: 5vw
-
-			@media #{$tablet}
-				float: left
-				max-width: none
-				max-height: none
-
-			@media #{$tablet-strict}
-				width: 45%
-				height: 30vw
-				margin-left: 2%
-
-			@media #{$desktop-strict}
-				width: 23%
-				height: 15vw
-				max-height: 170px
-				margin-left: 10px
-
-			@media #{$large}
-				width: 23.5%
-				height: 15vw
-				max-height: 190px
-				margin-left: 10px
-				margin-top: 80px
-
-		&_checked
-			&:checked + label
-				transform: translateY(0)
-				filter: grayscale(0);
-				height: 100%
-				width: 100%
-				top: 0
-				border: 2px solid $color_neon
-
-				.order__type_item-text
-					font-size: 25px
-					text-shadow: 0 0 6px $color_neon
-
-		&_item
-			width: 90%
-			height: 90%
-			display: block
-			margin: 0 auto
-			transition: .5s
-			position: relative
-			top: 5%
-			filter: grayscale(100%);
-			margin-bottom: 70px
-			cursor: pointer
-			box-sizing: border-box
-
-			&:hover
-				transform: translateY(0)
-				filter: grayscale(0);
-				height: 100%
-				width: 100%
-				top: 0
-
-				.order__type_item-text
-					font-size: 25px
-					text-shadow: 0 0 6px $color_neon
-
-					@media #{$desktop}
-						font-size: 23px
-
-			&-img
-				width: 100%
-				height: 100%
-				position: absolute
-				top: 0
-
-			&-text
-				z-index: 1
-				color: #000
-				font-weight: 500
-				position: absolute
+			&-line
+				display: block
 				width: 80%
-				margin-left: 10%
-				text-align: center
-				height: 30px
-				top: 50%
-				font-size: 20px
-				transform: translateY(-15px)
+				margin: 0 auto
+				margin-top: 50%
+				transform: translateY(-1px) rotate(45deg)
+				height: 2px
+				background-color: #222
 				transition: .5s
 
-				@media #{$desktop}
-					font-size: 20px
+				&::before
+					content: ''
+					display: block
+					height: 2px
+					background-color: #222
+					transform: rotate(90deg)
+					transition: .5s
+
+			&-contain:hover &-line,
+			&-contain:hover &-line::before
+				background-color: $color_neon
+
+		&_title
+			text-align: center
+			font-size: 18px
+			line-height: 30px
+			margin-bottom: 15px
+
+			@media #{$tablet}
+				text-align: left
+				font-size: 24px
+				width: 90%
+				margin: 0 auto
+				margin-bottom: 40px
+
+			@media #{$large}
+				font-size: 28px
+
+	&__main
+		width: 90%
+		margin: 0 auto
+		margin-bottom: 20px
+
+	&__types-order
+		width: 90%
+		margin: 0 auto
+		margin-bottom: 30px
+
+		@media #{$tablet}
+			column-count: 2
+
+	&__type-order
+		width: 90%
+		height: 90%
+		display: block
+		margin: 0 auto
+		transition: .5s
+
+		&:hover
+			width: 100%
+			height: 100%
+
+		&:hover &_image
+			filter: grayscale(0)
+
+		&:hover &_text
+			width: 100%
+
+		&_inp:checked + &
+			width: 100%
+			height: 100%
+
+		&_inp:checked + & > &_image
+			filter: grayscale(0)
+
+		&_inp:checked + & > &_text
+			width: 100%
+
+		&_image
+			width: 100%
+			height: 100%
+			filter: grayscale(1)
+
+		&_text
+			position: absolute
+			z-index: 2
+			text-align: center
+			height: 30px
+			width: 90%
+			top: 50%
+			color: #fff
+			transform: translateY(-15px)
+			font-size: 20px
+			transition: .5s
+
+		&-i
+			width: 100%
+			max-width: 450px
+			margin: 0 auto
+			height: 200px
+			margin-bottom: 20px
+			position: relative
 
 	&__area
 		margin-top: 30px
@@ -331,3 +359,27 @@ $color_neon: #00f7ff
 					background-color: $color_neon
 					font-size: 20px
 					color: #fff
+
+	&_show
+		animation: popup_order 2s forwards
+
+.popup-order_close
+	position: fixed
+	top: 0
+	left: 0
+	width: 100vw
+	height: 100vh
+	background-color: rgba(0, 0, 0, .7)
+	cursor: pointer
+	z-index: 45
+
+@keyframes popup_order
+	0%
+		display: none
+		margin-left: -100vw
+	1%
+		display: block
+		margin-left: -100vw
+	100%
+		display: block
+		margin-left: 0

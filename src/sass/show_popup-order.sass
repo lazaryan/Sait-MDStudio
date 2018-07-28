@@ -1,0 +1,44 @@
+@import "media"
+
+$color_neon: #00f7ff
+
+.show_popup-order
+	width: 100%
+	height: 150px
+	border: 1px solid #222
+	cursor: pointer
+	overflow: hidden
+	position: relative
+	transition: .5s
+
+	&-i
+		margin-bottom: 100px
+
+	&:hover
+		border: 1px solid $color_neon
+
+	&:hover &__text
+		font-size: 23px
+
+	@media #{$tablet}
+		width: 80%
+		margin: 0 auto
+
+	&__img
+		width: 100%
+		filter: grayscale(.8)
+		transition: .5s
+
+		&:hover
+			filter: grayscale(0)
+
+	&__text
+		color: #fff
+		font-size: 20px
+		position: absolute
+		text-align: center
+		width: 100%
+		height: 30px
+		top: 50%
+		transform: translateY(-50%)
+		transition: .5s

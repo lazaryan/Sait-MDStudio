@@ -10,7 +10,7 @@ if (typeof Element.prototype.addEventListener === 'undefined') {
 /*стартовое меню*/
 let start_nav = document.querySelector('.js-start-nav');
 
-start_nav.addEventListener("click", function (item)  {
+start_nav.addEventListener("click", (item) => {
         let target = item.target;
         let id;
 
@@ -20,7 +20,7 @@ start_nav.addEventListener("click", function (item)  {
                 hidePreloader();
                 start_nav.classList.add('js-start-nav_none');
 
-                setTimeout(function () {
+                setTimeout(() => {
                         hideStartMenu();
 
                         let block = document.getElementById('content_' + id);
@@ -34,8 +34,7 @@ start_nav.addEventListener("click", function (item)  {
 function hideStartMenu() {
         start_nav.classList.add('js-start-nav_none');
 
-        let childs      = start_nav.children;
-        let count       = 0;
+        let [childs, count] = [start_nav.children, 0];
 
         for(let i = 0; i < childs.length; i++) {
                 count++;
@@ -52,7 +51,7 @@ let content     = document.querySelectorAll('.content');
 let nav         = document.querySelectorAll('.js-nav__item-link');
 
 for(let i = 0; i < nav.length; i++){
-    nav[i].addEventListener('click', function (item)  {
+    nav[i].addEventListener('click', (item) => {
                 let value = item.target.dataset.value;
 
                 if(value == "home"){
@@ -86,7 +85,7 @@ for(let i = 0; i < nav.length; i++){
 }
 
 for(let i = 0; i < content.length; i++){
-    content[i].addEventListener('click', function ()  {
+        content[i].addEventListener('click', () => {
                 let nav = document.querySelector('.js-nav');
 
                 if(nav.classList.contains('nav_active'))
@@ -105,14 +104,13 @@ function showMenu(){
 }
 
 function hideContent(){
-        content.forEach( function (item) {
+        content.forEach((item) => {
                 item.classList.add('_none');
         })
 
         start_nav.classList.remove('js-start-nav_none');
 
-        let childs      = start_nav.children;
-        let count       = 0;
+        let [childs, count] = [start_nav.children, 0];
 
         for(let i = 0; i < childs.length; i++) {
                 count++;
@@ -131,7 +129,7 @@ function startMasonry(){
 
 let projects = document.querySelector('.js-grid_project');
 
-projects.addEventListener('click', function (elem) {
+projects.addEventListener('click', (elem) => {
         let target = elem.target;
 
         if(target.classList.contains('js-grid__item_img')){
@@ -162,23 +160,23 @@ function showPopUpImage(id) {
                 document.querySelector('.js-project__popup_scroll').classList.remove('_none');
 
                 let scroll = '';
-                scroll +=       '<div class="project__popup_scroll__prev js-project__popup_scroll__prev">' +
-                                        '<span class="project__popup_scroll__prev_line js-project__popup_scroll__prev"></span>' +
-                                '</div>';
+                scroll +=       `<div class="project__popup_scroll__prev js-project__popup_scroll__prev">
+                                        <span class="project__popup_scroll__prev_line js-project__popup_scroll__prev"></span>
+                                </div>`;
 
-                scroll += '<div class="project__popup_scroll__item">'+
-                                        '<img class="project__popup_scroll__item_img js-project__popup_scroll__item_img project__popup_scroll__item_img_active" src="'+ images[0].src +'" data-number="'+ 0 +'"/>' +
-                                '</div>';
+                scroll += `<div class="project__popup_scroll__item">
+                                        <img class="project__popup_scroll__item_img js-project__popup_scroll__item_img project__popup_scroll__item_img_active" src="${images[0].src}" data-number="0"/>
+                                </div>`;
 
                 for(let i = 1; i< images.length; i++) {
-                        scroll += '<div class="project__popup_scroll__item">'+
-                                        '<img class="project__popup_scroll__item_img js-project__popup_scroll__item_img" src="'+ images[i].src +'" data-number="'+ i +'"/>' +
-                                '</div>';
+                        scroll += `<div class="project__popup_scroll__item">
+                                        <img class="project__popup_scroll__item_img js-project__popup_scroll__item_img" src="${images[i].src}" data-number="${i}"/>
+                                </div>`;
                 }
 
-                scroll +=       '<div class="project__popup_scroll__next js-project__popup_scroll__next">' +
-                                        '<span class="project__popup_scroll__next_line js-project__popup_scroll__next"></span>' +
-                                '</div>';
+                scroll +=       `<div class="project__popup_scroll__next js-project__popup_scroll__next">
+                                        <span class="project__popup_scroll__next_line js-project__popup_scroll__next"></span>
+                                </div>`;
 
                 document.querySelector('.js-project__popup_scroll-i').innerHTML = scroll;
         }else{
@@ -186,7 +184,7 @@ function showPopUpImage(id) {
         }
 }
 
-popup.addEventListener('click', function(elem) {
+popup.addEventListener('click', (elem) => {
         let target = elem.target;
         let images = document.querySelectorAll('.js-grid__item_img');
 
@@ -236,13 +234,13 @@ popup.addEventListener('click', function(elem) {
                 let new_img;
 
                 if(id != id_min){
-                        new_img = document.querySelector('.project__popup_scroll__item_img[data-number="' + (id - 1) +'"]');
+                        new_img = document.querySelector(`.project__popup_scroll__item_img[data-number="${(id - 1)}"]`);
                 }else{
-                        new_img = document.querySelector('.project__popup_scroll__item_img[data-number="' + id_max +'"]');
+                        new_img = document.querySelector(`.project__popup_scroll__item_img[data-number="${id_max}"]`);
                 }
 
                 new_img.classList.add('project__popup_scroll__item_img_active');
-                document.querySelector('.project__popup_scroll__item_img[data-number="' + id +'"]').classList.remove('project__popup_scroll__item_img_active');
+                document.querySelector(`.project__popup_scroll__item_img[data-number="${id}"]`).classList.remove('project__popup_scroll__item_img_active');
                 document.querySelector('.js-project__popup_img-i').setAttribute('src', new_img.src);
         }
 
@@ -256,20 +254,20 @@ popup.addEventListener('click', function(elem) {
                 let new_img;
 
                 if(id != id_max){
-                        new_img = document.querySelector('.project__popup_scroll__item_img[data-number="' + (id + 1) +'"]');
+                        new_img = document.querySelector(`.project__popup_scroll__item_img[data-number="${(id + 1)}"]`);
                 }else{
-                        new_img = document.querySelector('.project__popup_scroll__item_img[data-number="' + id_min +'"]');
+                        new_img = document.querySelector(`.project__popup_scroll__item_img[data-number="${id_min}"]`);
                 }
 
                 new_img.classList.add('project__popup_scroll__item_img_active');
-                document.querySelector('.project__popup_scroll__item_img[data-number="' + id +'"]').classList.remove('project__popup_scroll__item_img_active');
+                document.querySelector(`.project__popup_scroll__item_img[data-number="${id}"]`).classList.remove('project__popup_scroll__item_img_active');
                 document.querySelector('.js-project__popup_img-i').setAttribute('src', new_img.src);
         }
 });
 
 /*прелоадер*/
 function showPreloader() {
-        setTimeout(function () {
+        setTimeout(() => {
                 let preloader = document.querySelector('.js-preloader')
                 preloader.classList.add('preloader_fadeout');
                 preloader.classList.remove('preloader_fadein');
@@ -285,6 +283,38 @@ function hidePreloader() {
         preloader.classList.remove('preloader_fadeout');
 }
 
-window.onload = function () {
-        showPreloader();
+window.onload = () => showPreloader();
+
+/*popup заказ проекта*/
+
+let popupOrder = document.querySelector('.js-popup-order');
+let popupOrderClose = document.querySelector('.js-popup-order_close');
+let popupOrderCloseBacg = document.querySelector('.js-popup-order_close_fill');
+
+popupOrderClose.addEventListener('click', () => {
+        hidePopupOrder();
+});
+
+popupOrderCloseBacg.addEventListener('click', () => {
+        hidePopupOrder();
+});
+
+function hidePopupOrder () {
+        popupOrder.classList.add('_none');
+        popupOrderCloseBacg.classList.add('_none');
+        popupOrder.classList.remove('popup-order_show');
 }
+
+let popupOrderShow = document.querySelectorAll('.js-show_popup-order');
+
+popupOrderShow.forEach((item) => {
+        item.addEventListener('click', () => {
+                popupOrder.classList.add('popup-order_show');
+                popupOrder.classList.remove('_none');
+                popupOrderCloseBacg.classList.remove('_none');
+
+                let scroll = document.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || (document.body && document.body.scrollTop);
+                popupOrder.setAttribute('style', `top: ${scroll}px`);
+                console.log(popupOrder.getAttribute('style'))
+        });
+});

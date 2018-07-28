@@ -14,6 +14,11 @@
 		height: 100%
 		background: url('../img/about_us/my_photo.jpg') no-repeat center
 		background-size: cover
+		filter: grayscale(.8)
+		transition: .5s
+
+		&:hover
+			filter: grayscale(0)
 
 	@media #{$tablet}
 		float: left
@@ -77,7 +82,6 @@
 		height: 40px
 		text-align: center
 		font-size: 30px
-		box-shadow: 0 5px 4px rgba(33, 32, 32, 0.8)
 		margin-bottom: 20px
 		margin-top: 20px
 
@@ -121,3 +125,97 @@
 			height: 60px
 			font-size: 40px
 			line-height: 60px
+
+
+.about-us
+	&__title
+		clear: both
+		text-align: center
+		font-weight: 200
+		font-size: 45px
+		line-height: 50px
+		margin-bottom: 30px
+		margin-top: 20px
+
+		&_bold
+			font-weight: 700
+
+	&__category
+		//display: flex
+		width: 90%
+		margin: 0 auto
+		//margin-left: -
+		margin-bottom: 60px
+		column-count: 1
+
+		@media #{$tablet-strict}
+			column-count: 2
+
+		@media #{$desktop-strict}
+			column-count: 2
+
+		@media #{$large}
+			column-count: 4
+			display: flex
+
+		&_item
+			width: 90%
+			max-width: 500px
+			margin: 0 auto
+			min-height: 230px
+			margin-bottom: 15px
+			position: relative
+
+			@media #{$tablet-strict}
+				width: 98%
+				margin-left: 0
+				max-width: none
+				min-height: 290px
+
+			@media #{$desktop-strict}
+				width: 98%
+				margin-left: 0
+				max-width: none
+
+			@media #{$large}
+				width: 98%
+				margin-left: none
+				max-width: none
+				min-height: 300px
+
+			&__title
+				text-align: right
+				font-size: 30px
+				line-height: 45px
+
+				@media #{$tablet-strict}
+					font-size: 28px
+
+				@media #{$large}
+					font-size: 23px
+
+			&__img
+				width: 100%
+
+			&__text
+				width: 65%
+				left: 35%
+				top: 35%
+				position: absolute
+				font-size: 20px
+				font-weight: 300
+
+				@media #{$tablet-strict}
+					top: 30%
+					font-size: 15px
+
+				@media #{$desktop-strict}
+					top: 30%
+					font-size: 15px
+
+				@media #{$large}
+					top: 23%
+					font-size: 13px
+
+
+
