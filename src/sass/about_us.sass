@@ -141,12 +141,15 @@
 			font-weight: 700
 
 	&__category
-		//display: flex
 		width: 90%
 		margin: 0 auto
-		//margin-left: -
 		margin-bottom: 60px
 		column-count: 1
+
+		&::after
+			content: ''
+			display: block
+			clear: both
 
 		@media #{$tablet-strict}
 			column-count: 2
@@ -162,8 +165,8 @@
 			width: 90%
 			max-width: 500px
 			margin: 0 auto
-			min-height: 230px
-			margin-bottom: 15px
+			min-height: 245px
+			margin-bottom: 50px
 			position: relative
 
 			@media #{$tablet-strict}
@@ -185,7 +188,7 @@
 
 			&__title
 				text-align: right
-				font-size: 30px
+				font-size: 23px
 				line-height: 45px
 
 				@media #{$tablet-strict}
@@ -202,7 +205,7 @@
 				left: 35%
 				top: 35%
 				position: absolute
-				font-size: 20px
+				font-size: 19px
 				font-weight: 300
 
 				@media #{$tablet-strict}
