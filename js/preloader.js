@@ -1,0 +1,1 @@
+"use strict";var preloader=document.querySelector("#preloader");function showPreloader(){setTimeout(function(){preloader.classList.add("preloader_fadeout"),preloader.classList.remove("preloader_fadein")},2500)}window.onload=function(){return showPreloader()};
