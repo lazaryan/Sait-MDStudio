@@ -1,0 +1,179 @@
+@import "../variables/media"
+@import "../variables/color"
+
+.footer
+	width: 100%
+	background-color: $color_footer
+	padding: 10px 0 10px 25px
+	box-sizing: border-box
+	color: $color_footer_text
+
+	@media #{$desktop}
+		display: flex
+		justify-content: space-between
+
+	&__column
+		@media #{$desktop}
+			flex-grow: 1
+
+		&_big
+
+			@media #{$desktop}
+				flex-grow: 2
+
+	&__title
+		margin-bottom: 25px
+
+		@media #{$desktop}
+			flex-grow: 0
+			display: flex
+			align-items: center
+			justify-content: flex-end
+
+		@media #{$desktop-strict}
+			width: 250px
+
+		@media #{$large}
+			width: 300px
+
+		&_text
+			font-size: 22px
+			line-height: 70px
+			text-align: center
+
+			@media #{$tablet-strict}
+				font-size: 25px
+				line-height: 75px
+
+			@media #{$desktop-strict}
+				font-size: 33px
+				line-height: 45px
+
+			@media #{$large}
+				font-size: 39px
+				line-height: 60px
+
+	&__information
+		margin-bottom: 35px
+		max-width: 400px
+		margin: auto
+
+		@media #{$tablet}
+			display: flex
+			justify-content: space-between
+			max-width: 900px
+
+		&_column
+			margin-bottom: 25px
+
+		&_title
+			margin-bottom: 30px
+			display: flex
+			justify-content: space-between
+			align-items: center
+
+			&:hover &-line-i
+				transform: rotate(-45deg)
+				background-color: $color_neon
+
+			&:hover &-text
+				color: $color_neon
+
+			&-line
+				width: 50px
+				height: 50px
+				display: flex
+				justify-content: center
+				align-items: center
+
+				&-i
+					width: 80%
+					height: 2px
+					background-color: $color_footer_text
+					transition: .5s
+
+			&-text
+				width: 100%
+				text-align: center
+				transition: .5s
+				font-size: 19px
+				line-height: 50px
+				text-decoration: underline
+
+				@media #{$desktop}
+					text-decoration: none
+
+		&_item
+			width: 100%
+			display: block
+			text-align: center
+			outline: none
+			text-decoration: none
+			color: $color_footer_text
+			font-size: 17px
+			line-height: 35px
+
+			@media #{$tablet}
+				font-size: 19px
+				line-height: 35px
+
+		&_link
+			display: flex
+			align-items: center
+			justify-content: space-between
+			margin-bottom: 20px
+			text-decoration: none
+
+			&:hover &-text
+				color: $color_neon
+
+			&-img
+				width: 50px
+				height: 50px
+				padding: 10px
+				box-sizing: border-box
+
+			&-text
+				padding: 0 15px
+				color: $color_footer_text
+				line-height: 50px
+				font-size: 17px
+				text-align: center
+				width: 100%
+				transition: .5s
+
+				@media #{$tablet}
+					font-size: 19px
+
+	&__label
+		max-width: 500px
+		margin: 0 auto
+		flex-grow: 0
+
+		@media #{$desktop}
+			width: 150px
+			margin: 0
+			max-width: none
+
+			&::after
+				content: ''
+				display: block
+				clear: both
+
+		&_img
+			width: 100%
+			height: 100%
+
+			@media #{$desktop}
+				width: 300px
+				height: 300px
+				float: right
+
+			&-i
+				width: 100%
+				height: 100%
+
+				@media #{$desktop}
+					transform: rotate(-90deg) translate(-33%, 100%)
+					width: 300px
+					height: 100px

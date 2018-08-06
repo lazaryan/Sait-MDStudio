@@ -1,0 +1,99 @@
+@import "../variables/media"
+@import "../variables/color"
+
+.order-popup
+	&__block
+		width: 100%
+		max-width: 900px
+		background-color: #fff
+		padding: 15px
+		box-sizing: border-box
+		z-index: 51
+		position: absolute
+		top: 0
+		transition: left 2s
+
+		@media #{$tablet}
+			width: 90%
+			left: 50%
+			transform: translateX(-50%)
+			border: 1px solid #222
+
+	&__header
+		margin-bottom: 30px
+
+		&::after
+			content: ''
+			display: block
+			clear: both
+
+		&_close
+			width: 60px
+			height: 60px
+			float: right
+			right: 15px
+			background-color: transparent
+			outline: none
+			border: none
+			cursor: pointer
+
+			@media #{$tablet}
+				width: 70px
+				height: 70px
+
+			&:hover &-line,
+			&:hover &-line::after
+				background-color: $color_neon
+
+			&-line
+				width: 80%
+				margin: auto
+				transform: rotate(-45deg)
+
+			&-line::after
+				content: ''
+				display: block
+				transform: rotate(90deg)
+
+			&-line,
+			&-line::after
+				height: 2px
+				background-color: #222
+				transition: .5s
+
+	&__button
+		width: 70%
+		max-width: 900px
+		min-height: 16vw
+		margin: auto
+		display: block
+		margin-bottom: 100px
+		transition: .5s
+		border: 1px solid #000
+		font-size: 23px
+		cursor: pointer
+
+		@media #{$desktop}
+			min-height: 0
+			height: 180px
+			margin-bottom: 150px
+
+		&:hover,
+		&:focus,
+		&:active
+			border: 1px solid $color_neon
+			font-size: 25px
+			color: #fff
+			outline: none
+
+.fill-background
+	width: 100vw
+	height: 100vh
+	top: 0
+	background-color: rgba(0, 0, 0, .7)
+	position: fixed
+	z-index: 50
+	cursor: pointer
+
+.hide_left
+	left: -120vw

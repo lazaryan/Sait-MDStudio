@@ -1,0 +1,64 @@
+<form action="" method="POST">
+        <section class="order__section">
+                <h2 class="order__title">Что хотите заказать?</h2>
+                <main class="order__type">
+                        <div class="order__type_item">
+                                <input type="radio" value="1000" name="type_order" id="type_order_1" class="_none order__type_input" checked />
+                                <label for="type_order_1" class="order__type_check">
+                                        <div class="order__type_name">Архитектура</div>
+                                        <img src="./images/order/1.jpg" alt="image arhitecture" class="order__type_image" />
+                                </label>
+                        </div>
+                        <div class="order__type_item">
+                                <input type="radio" value="1500" name="type_order" id="type_order_2" class="_none order__type_input" />
+                                <label for="type_order_2" class="order__type_check">
+                                        <p class="order__type_name">Дизайн интерьера</p>
+                                        <img src="./images/order/2.png" alt="image interior design" class="order__type_image" />
+                                </label>
+                        </div>
+                        <div class="order__type_item">
+                                <input type="radio" value="2000" name="type_order" id="type_order_3" class="_none order__type_input" />
+                                <label for="type_order_3" class="order__type_check">
+                                        <p class="order__type_name">Архитектура + Дизайн</p>
+                                        <img src="./images/order/3.png" alt="image arhitecture and design" class="order__type_image" />
+                                </label>
+                        </div>
+                        <div class="order__type_item">
+                                <input type="radio" value="1700" name="type_order" id="type_order_4" class="_none order__type_input" />
+                                <label for="type_order_4" class="order__type_check">
+                                        <p class="order__type_name">3D визуализация</p>
+                                        <img src="./images/order/3.png" alt="image 3d visualization" class="order__type_image" />
+                                </label>
+                        </div>
+                </main>
+        </section>
+        <section class="order__section order__section_line">
+                <h2 class="order__title">Какая у вас площадь?</h2>
+                <main class="order__area">
+                        <input type="number" class="order__area_input" name="area" required="required" min="0" max="10000" />
+                        <span class="units">м <sup>2<sup></span>
+                </main>
+        </section>
+        <section class="order__section order__section_line order__section_line_wrap">
+                <h2 class="order__title">Авторское сопровождение брать будем?</h2>
+                <main class="order__author-support">
+                        <input type="radio" name="author-support" class="_none order__author-support_input"
+                                id="author-support_yes" value="1000" checked />
+                        <label class="order__author-support_check" for="author-support_yes">да</label>
+                        <input type="radio" name="author-support" class="_none order__author-support_input"
+                                id="author-support_no" value="0"/>
+                        <label class="order__author-support_check" for="author-support_no">нет</label>
+                </main>
+                <p><small class="order__title_comment">Мы планируем и контролируем ход ремонтно-строительных работ. Наша команда архитекторов поможет вам избежать ошибок, ускорить процесс и легко пройти сквозь все этапы стройки</small><p>
+        </section>
+        <section class="order__section">
+                <h2 class="order__title">Отправить заявку</h2>
+                <main class="order__form">
+                        <input type="text" class="order__form_input" placeholder="Ваши ФИО" id="fio" required="required" name="fio" maxlength="140" />
+                        <input type="text" class="order__form_input" placeholder="Номер телефона" id="phone" required="required" name="phone" maxlength="80" />
+                        <input type="text" class="order__form_input" placeholder="Электронная почта" id="mail" required="required" name="mail" maxlength="80" />
+                        <input type="text" class="order__form_input" placeholder="Ваше местоположение" id="location" required="required" name="location" maxlength="255" />
+                </main>
+        </section>
+        <input type="submit" class="order__submit" id="order__submit" />
+</form>

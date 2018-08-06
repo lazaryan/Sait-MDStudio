@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        @@include('template_html/_meta.html')
+
+        <title>Gallery</title>
+
+        <link rel="stylesheet" type="text/css" href="css/lib/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/general/font.css" />
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+
+        <link rel="stylesheet" type="text/css" href="css/general/preloader.css" />
+        <link rel="stylesheet" type="text/css" href="css/general/nav.css" />
+        <link rel="stylesheet" type="text/css" href="css/general/content.css" />
+        <link rel="stylesheet" type="text/css" href="css/general/footer.css" />
+</head>
+<body id="body">
+        <!--preloader-->
+        @@include('template_html/_preloader.html')
+
+        <!--[if ite IE 8]>
+        <script>
+        @@include('js/support/_addEventListener.js')
+        <script>
+        <![endif]-->
+
+        <!--navigation-->
+        @@include('template_html/_nav.html')
+
+        <!--start main block-->
+        <main class="content" id="main">
+                <h1 class="title">Галлерея</h1>
+                <div class="information">
+                        ...
+                </div>
+        </main>
+        <!--finish main block-->
+
+        <!--footer-->
+        @@include('template_html/_footer.html')
+
+        <script src="js/lib/masonry.pkgd.min.js" defer></script>
+        <script src="js/gallery.js" defer></script>
+</body>
+</html>

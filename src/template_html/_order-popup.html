@@ -1,0 +1,22 @@
+<!--start butoon-->
+<button class="order-popup__button" id="orderPopupButton">
+        Заказать проект
+</button>
+<!--finish butoon-->
+
+<!--start fill background-->
+<div class="fill-background _none" id="closePopupBackground"></div>
+<!--finish fill background-->
+
+<!--start order popup-->
+<div class="order-popup__block hide_left" id="popupOrder" style="top: 0">
+        <header class="order-popup__header">
+                <button class="order-popup__header_close" id="closePopup">
+                        <div class="order-popup__header_close-line"></div>
+                </button>
+        </header>
+        @@include('./_order.html')
+</div>
+<!--finish order popup-->
+
+<script src="./js/order_popup.js" async></script>

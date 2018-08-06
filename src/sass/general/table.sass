@@ -1,0 +1,39 @@
+@import "../variables/media"
+@import "../variables/color"
+
+.table
+	border-spacing: 0
+	margin: 0 auto
+	margin-bottom: 50px
+
+	&__item
+		&:last-child &_name,
+		&:last-child &_text
+			border-bottom: none
+			margin-bottom: 30px
+
+		&_name
+			width: 20%
+			font-weight: 700
+			font-size: 16px
+			border-bottom: 1px solid $color_tabel_border
+			border-right: 1px solid $color_tabel_border
+			padding: 10px 5px
+			box-sizing: border-box
+
+			@media #{$desktop}
+				width: 200px
+				padding: 15px 0
+
+		&_text
+			border-bottom: 1px solid $color_tabel_border
+			text-align: center
+			font-weight: 300
+			font-size: 15px
+			line-height: 25px
+			padding: 10px 5px
+			box-sizing: border-box
+
+			@media #{$desktop}
+				padding: 15px 10px
+				text-align: left

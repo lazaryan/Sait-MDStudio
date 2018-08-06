@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        @@include('template_html/_meta.html')
+
+        <title>Arhitecture</title>
+
+        <link rel="stylesheet" type="text/css" href="css/lib/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/general/font.css" />
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+
+        <link rel="stylesheet" type="text/css" href="css/general/preloader.css" />
+        <link rel="stylesheet" type="text/css" href="css/general/nav.css" />
+        <link rel="stylesheet" type="text/css" href="css/general/content.css" />
+        <link rel="stylesheet" type="text/css" href="css/general/footer.css" />
+        <link rel="stylesheet" type="text/css" href="css/general/order-popup.css" />
+        <link rel="stylesheet" type="text/css" href="css/order.css" />
+</head>
+<body id="body">
+        <!--preloader-->
+        @@include('template_html/_preloader.html')
+
+        <!--[if ite IE 8]>
+        <script>
+        @@include('js/support/_addEventListener.js')
+        <script>
+        <![endif]-->
+
+        <!--navigation-->
+        @@include('template_html/_nav.html')
+
+        <!--start main block-->
+        <main class="content" id="main">
+                <h1 class="title">Архитектура</h1>
+                <div class="information">
+                        <p class="information__text">Мы создаем объекты жилой и коммерческой недвижимости. Группа архитекторов и проектировщиков берет на себя все заботы от создания концепции до реализации. Процесс включает три этапа:</p>
+                        <h2 class="information__title">эскизный проект <abbr class="abbr" title="эскизный проект">(эп)</abbr></h2>
+                        <p class="information__text">Разрабатываем предпроектное предложение в соответствии с техническими условиями и пожеланиями заказчика. Формируем комплект документов: схему генплана, планы этажей, 3D визуализации, фасады в цвете.</p>
+                        <h2 class="information__title">проектное предложение <abbr class="abbr" title="проектное предложение">(пп)</abbr></h2>
+                        <ul class="information__list">
+                                <li class="information__list_item">Генплан</li>
+                                <li class="information__list_item">Паспорт фасада</li>
+                                <li class="information__list_item">Фасады в осях</li>
+                                <li class="information__list_item">Планировочные решения</li>
+                                <li class="information__list_item">Общие виды здания</li>
+                        </ul>
+                        <h2 class="information__title">рабочий проект</h2>
+                        <p class="information__text">Комплект документации, необходимый для строительства</p>
+                        <table class="table">
+                                <tbody>
+                                        <tr class="table__item">
+                                                <th class="table__item_name">ГП</th>
+                                                <th class="table__item_text">Генеральный план: привязка проектируемого здания и строений МАФ на участке, ТЭП, озеленение, проезды, площадки (без ландшафтного дизайна)</th>
+                                        </tr>
+                                        <tr class="table__item">
+                                                <th class="table__item_name">АР</th>
+                                                <th class="table__item_text">Архитектурные решения: паспорт фасада, фасады в осях, планировки с экспликацией помещений, разрезы по проектируемому зданию</th>
+                                        </tr>
+                                        <tr class="table__item">
+                                                <th class="table__item_name">КЖ (КМ)</th>
+                                                <th class="table__item_text">Конструкции железобетонные или металлические: фундаменты, перекрытия, монолитные пояса, конструктив лестниц и т.п. (по конструктивным особенностям проектируемого здания)</th>
+                                        </tr>
+                                        <tr class="table__item">
+                                                <th class="table__item_name">ТХ</th>
+                                                <th class="table__item_text">Технологическая часть проекта: планы расстановки мебели и оборудования, спецификация оборудования и установочных приборов</th>
+                                        </tr>
+                                        <tr class="table__item">
+                                                <th class="table__item_name">ОВ</th>
+                                                <th class="table__item_text">Отопление и вентиляция: планы расстановки отопительного и вентиляционного оборудования, трехмерные схемы систем, спецификация установочного оборудования и материалов</th>
+                                        </tr>
+                                        <tr class="table__item">
+                                                <th class="table__item_name">ВК</th>
+                                                <th class="table__item_text">Внутренние водопровод и канализация: планы сетей разводки, трехмерные схемы систем водоснабжения и канализации, спецификация установочного оборудования и материалов</th>
+                                        </tr>
+                                        <tr class="table__item">
+                                                <th class="table__item_name">ЭТР</th>
+                                                <th class="table__item_text">Электротехнические решения: принципиальная и однолинейная схемы электроснабжения, планы расположения электрического оборудования (розеток, освещения, электрических щитов), спецификация материалов</th>
+                                        </tr>
+                                        <tr class="table__item">
+                                                <th class="table__item_name">Сроки</th>
+                                                <th class="table__item_text">от 4 до 10 недель (в зависимости от сложности проекта)</th>
+                                        </tr>
+                                </tbody>
+                        </table>
+                        <p class="information__text">По договоренности включается авторское сопровождение проекта. Мы планируем и контролируем ход ремонтно-строительных работ. Kоманда архитекторов и инженеров поможет избежать ошибок и легко пройти все этапы строительства</p>
+                </div>
+        </main>
+        <!--finish main block-->
+
+        <!--button-->
+        @@include('template_html/_order-popup.html')
+
+        <!--footer-->
+        @@include('template_html/_footer.html')
+</body>
+</html>
