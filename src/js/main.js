@@ -3,10 +3,10 @@
 main_nav.addEventListener('click', (el) => {
     let target = el.target;
 
-    if(target.classList.contains('main__link_text')){
+    /*if(target.classList.contains('main__link_text')){
         hideStartMenu();
         return true;
-    }
+    }*/
 });
 
 function hideStartMenu () {

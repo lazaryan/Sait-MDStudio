@@ -40,6 +40,7 @@
 			font-size: 22px
 			line-height: 70px
 			text-align: center
+			font-weight: 500
 
 			@media #{$tablet-strict}
 				font-size: 25px
@@ -61,7 +62,7 @@
 		@media #{$tablet}
 			display: flex
 			justify-content: space-between
-			max-width: 900px
+			max-width: 850px
 
 		&_column
 			margin-bottom: 25px
@@ -121,22 +122,23 @@
 			display: flex
 			align-items: center
 			justify-content: space-between
-			margin-bottom: 20px
+			margin-bottom: 13px
 			text-decoration: none
 
-			&:hover &-text
+			&:hover &-text,
+			&:hover .icons
 				color: $color_neon
 
 			&-img
-				width: 50px
-				height: 50px
-				padding: 10px
+				width: 30px
+				height: 30px
+				padding: 8px
 				box-sizing: border-box
 
 			&-text
 				padding: 0 15px
 				color: $color_footer_text
-				line-height: 50px
+				line-height: 40px
 				font-size: 17px
 				text-align: center
 				width: 100%
@@ -166,7 +168,7 @@
 
 			@media #{$desktop}
 				width: 300px
-				height: 300px
+				height: 230px
 				float: right
 
 			&-i
@@ -174,6 +176,6 @@
 				height: 100%
 
 				@media #{$desktop}
-					transform: rotate(-90deg) translate(-33%, 100%)
-					width: 300px
+					transform: rotate(-90deg) translate(-30%, 120%)
+					width: 230px
 					height: 100px
