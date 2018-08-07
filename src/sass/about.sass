@@ -1,0 +1,65 @@
+@import "./variables/media"
+@import "./variables/color"
+
+.about
+	@media #{$tablet}
+		&::after
+			content: ''
+			display: block
+			clear: both
+
+
+	&__my-photo
+		width: 70vmin
+		height: 70vmin
+		border-radius: 50%
+		overflow: hidden
+		margin: 0 auto
+		border: 2px solid #222
+		border-radius: 50%
+		margin-bottom: 40px
+
+		@media #{$tablet}
+			float: left
+
+		@media #{$tablet-strict}
+			width: 25vw
+			height: 25vw
+			margin-left: 3vw
+
+		@media #{$desktop-strict}
+			width: 25vw
+			height: 25vw
+			margin-top: 2vh
+
+		@media #{$large}
+			max-width: 370px
+			max-height: 370px
+			width: 25vw
+			height: 25vw
+			margin-left: 10px
+
+		&_image
+			width: 100%
+			filter: grayscale(0.8)
+
+	&__info
+		width: 80vw
+		margin: auto
+
+		@media #{$tablet}
+			float: right
+
+		@media #{$tablet-strict}
+			width: 50vw
+			margin-right: 5vw
+
+		@media #{$desktop-strict}
+			width: 45vw
+			margin-top: 5vw
+
+		@media #{$large}
+			max-width: 750px
+			width: 45vw
+			margin-right: 10px
+			margin-top: 50px
