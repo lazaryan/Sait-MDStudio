@@ -5,7 +5,6 @@
 
         <title>About</title>
 
-        <link rel="stylesheet" type="text/css" href="css/lib/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/general/font.css" />
         <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
 
@@ -71,9 +70,9 @@
                         <section class="about__section">
                                 <h2 class="about__section_title">Публикации</h2>
                                 <div class="about__journals">
-                                        <img class="about__journal" src="images/about_us/journal/1.jpg" alt="journal" />
-                                        <img class="about__journal" src="images/about_us/journal/2.jpg" alt="journal" />
-                                        <img class="about__journal" src="images/about_us/journal/3.jpg" alt="journal" />
+                                        <img class="about__journal" data-src="images/about_us/journal/1.jpg" alt="journal" />
+                                        <img class="about__journal" data-src="images/about_us/journal/2.jpg" alt="journal" />
+                                        <img class="about__journal" data-src="images/about_us/journal/3.jpg" alt="journal" />
                                 </div>
                                 <div class="about__journal_content">
                                         <h3 class="about__title about__title_middle about__title_left">Публикации в журнале - <span class="about__title_bold">как жирная точка<span></h3>
@@ -84,12 +83,12 @@
                                 <h2 class="about__section_title about__title_middle">Теле<span class="about__title_bold">проекты</span></h2>
                                 <p class="about__text about__text_bold">Участие в Телепроекте <q>Ремонт по-честному</q> на телеканале Рен-тв, авторский дизайн проект интерьера Российской певицы, солистки поп-группы <q>Фабрика</q> Александры Савельевой</p>
                                 <div class="about__teleproject">
-                                        <img class="about__teleproject_img" src="images/about_us/teleproject/-jaag3CwP28.jpg" alt="image teleproject" />
-                                        <img class="about__teleproject_img" src="images/about_us/teleproject/lYohi4Qsvac.jpg" alt="image teleproject" />
-                                        <img class="about__teleproject_img" src="images/about_us/teleproject/lYohi4Qsvac.jpg" alt="image teleproject" />
-                                        <img class="about__teleproject_img" src="images/about_us/teleproject/-jaag3CwP28.jpg" alt="image teleproject" />
-                                        <img class="about__teleproject_img" src="images/about_us/teleproject/lYohi4Qsvac.jpg" alt="image teleproject" />
-                                        <img class="about__teleproject_img" src="images/about_us/teleproject/main_min.jpg" alt="image teleproject" />
+                                        <img class="about__teleproject_img" data-src="images/about_us/teleproject/-jaag3CwP28.jpg" alt="image teleproject" />
+                                        <img class="about__teleproject_img" data-src="images/about_us/teleproject/lYohi4Qsvac.jpg" alt="image teleproject" />
+                                        <img class="about__teleproject_img" data-src="images/about_us/teleproject/lYohi4Qsvac.jpg" alt="image teleproject" />
+                                        <img class="about__teleproject_img" data-src="images/about_us/teleproject/-jaag3CwP28.jpg" alt="image teleproject" />
+                                        <img class="about__teleproject_img" data-src="images/about_us/teleproject/lYohi4Qsvac.jpg" alt="image teleproject" />
+                                        <img class="about__teleproject_img" data-src="images/about_us/teleproject/main_min.jpg" alt="image teleproject" />
                                 </div>
                                 <h3 class="about__title about__title_middle">Описание</h3>
                                 <p class="about__text about__text_indent about__text_small-margin">Главным пожеланием Российской певицы, солистки поп-группы <q>Фабрика</q> Александры Савельевой и ее семьи было сделать из гостинной светлое, уютное и функциональное пространство, т.к. в этом помещении собираются все родные и близкие.</p>
@@ -106,5 +105,7 @@
 
         <!--footer-->
         @@include('template_html/_footer.html')
+
+        <script src="js/support/images.js" defer></script>
 </body>
 </html>

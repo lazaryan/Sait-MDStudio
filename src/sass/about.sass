@@ -9,7 +9,6 @@
 			clear: both
 
 	&__section
-		//min-height: 100vh
 
 		&_title
 			line-height: 40px
@@ -233,14 +232,18 @@
 	&__link
 		color: #000
 		text-decoration: none
-		font-size: 20px
-		padding-left: 15px
+		font-size: 14px
+		text-align: center
 		font-weight: 700
 		transition: .5s
+
+		@media #{$tablet}
+			text-align: left
+			padding-left: 15px
 
 		&:hover
 			color: $color_neon
 
 		&:active,
 		&:link
-			color: #000
+			color: #000	

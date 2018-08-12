@@ -5,7 +5,6 @@
 
         <title>Gallery</title>
 
-        <link rel="stylesheet" type="text/css" href="css/lib/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/general/font.css" />
         <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
 
@@ -54,7 +53,11 @@
         <!--finish main block-->
 
         <div class="close_project _none" id="closePopupProject"></div>
-        <div class="project" id="popupProject"></div>
+        <div class="project" id="popupProject" style="top: 0">
+                <div class="project__prev"><div class="project__line"></div></div>
+                <div class="project__content"></div>
+                <div class="project__next"><div class="project__line"></div></div>
+        </div>
 
         <!--footer-->
         @@include('template_html/_footer.html')

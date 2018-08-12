@@ -28,7 +28,6 @@ function hidePopup () {
 function scrollTop(position = 0) {
         if(scrolled > position){
                 window.scrollTo(position, scrolled);
-                console.log(scrolled);
                 scrolled -= 30;
                 timer = setTimeout(() => scrollTop(position), 20);
         }else {
