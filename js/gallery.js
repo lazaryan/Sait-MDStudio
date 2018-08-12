@@ -1,1 +1,1 @@
-"use strict";
+"use strict";var galerry=document.querySelector(".js-grid"),project=document.querySelector("#popupProject"),closeProject=document.querySelector("#closePopupProject");function showPopupGallery(){closeProject.classList.remove("_none")}galerry.addEventListener("click",function(e){e.target.classList.contains("js-grid__image")&&showPopupGallery()},!0);
