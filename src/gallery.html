@@ -13,16 +13,18 @@
         <link rel="stylesheet" type="text/css" href="css/general/nav.css" />
         <link rel="stylesheet" type="text/css" href="css/general/content.css" />
         <link rel="stylesheet" type="text/css" href="css/general/footer.css" />
+
+        <link rel="stylesheet" type="text/css" href="css/gallery.css" />
 </head>
 <body id="body">
         <!--preloader-->
         @@include('template_html/_preloader.html')
 
-        <!--[if ite IE 8]>
-        <script>
-        @@include('js/support/_addEventListener.js')
-        <script>
-        <![endif]-->
+<!--[if ite IE 8]>
+<script>
+@@include('js/support/_addEventListener.js')
+<script>
+<![endif]-->
 
         <!--navigation-->
         @@include('template_html/_nav.html')
@@ -31,15 +33,40 @@
         <main class="content" id="main">
                 <h1 class="title">Галлерея</h1>
                 <div class="information">
-                        ...
+                        <div class="information_grid js-grid">
+                                <div class="grid__item">
+                                        <img class="grid__image js-grid__image" src="images/gallery/1.png" alt="image">
+                                        <img class="grid__image js-grid__image" src="images/gallery/3.png" alt="image">
+                                        <img class="grid__image js-grid__image" src="images/gallery/5.png" alt="image">
+                                </div>
+                                <div class="grid__item">
+                                        <img class="grid__image js-grid__image" src="images/gallery/3.png" alt="image">
+                                </div>
+                                <div class="grid__item">
+                                        <img class="grid__image js-grid__image" src="images/gallery/5.png" alt="image">
+                                </div>
+                                <div class="grid__item">
+                                        <img class="grid__image js-grid__image" src="images/gallery/3.png" alt="image">
+                                </div>
+                        </div>
                 </div>
         </main>
         <!--finish main block-->
 
+        <div class="close_project _none" id="closePopupProject"></div>
+        <div class="project" id="popupProject"></div>
+
         <!--footer-->
         @@include('template_html/_footer.html')
 
-        <script src="js/lib/masonry.pkgd.min.js" defer></script>
-        <script src="js/gallery.js" defer></script>
+        <!--<script src="js/lib/masonry.pkgd.min.js"></script>
+        <script>
+                let msnry = new Masonry('.js-grid', {
+                        itemSelector: '.js-grid__item',
+                        columnWidth: '.js-grid__item',
+                        percentPosition: true
+                });
+        </script>-->
+        <script src="js/gallery.js" async></script>
 </body>
 </html>

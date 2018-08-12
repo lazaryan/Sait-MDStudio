@@ -1,3 +1,38 @@
 @import "./variables/media"
 @import "./variables/color"
 
+.information_grid
+	width: 100%
+	columns: 2
+	column-gap: 0
+
+	@media #{$desktop}
+		columns: 3
+
+.grid
+
+	&__item
+		width: 100%
+		overflow: hidden
+
+	&__image
+		width: 100%
+		transition: .5s
+		filter: grayscale(.8)
+		display: none
+		cursor: pointer
+
+		&:nth-child(1)
+			display: block
+
+		&:hover
+			width: 105%
+			filter: grayscale(0)
+
+.close_project
+	width: 100vw
+	height: 100vh
+	top: 0
+	position: fixed
+	background-color: rgba(0, 0, 0, .9)
+	z-index: 30

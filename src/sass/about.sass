@@ -8,6 +8,41 @@
 			display: block
 			clear: both
 
+	&__section
+		//min-height: 100vh
+
+		&_title
+			line-height: 40px
+			font-size: 20px
+			display: flex
+			justify-content: center
+			align-items: center
+			margin-bottom: 30px
+
+			&::before,
+			&::after
+				content: ''
+				display: block
+				height: 2px
+				width: 60px
+				background-color: #222
+				max-width: 20%
+
+				@media #{$tablet}
+					max-width: none
+					width: 80px
+
+			&::before
+				margin-right: 1%
+
+				@media #{$desktop}
+					margin-right: 30px
+
+			&::after
+				margin-left: 1%
+
+				@media #{$desktop}
+					margin-left: 30px
 
 	&__my-photo
 		width: 70vmin
@@ -63,3 +98,149 @@
 			width: 45vw
 			margin-right: 10px
 			margin-top: 50px
+
+	&__title
+		text-align: center
+		margin-bottom: 30px
+
+		&_bold
+			font-weight: 600
+
+		&_middle
+			font-size: 23px
+			line-height: 45px
+			font-weight: 300
+
+		&_left
+			@media #{$tablet}
+				text-align: left
+				padding-left: 15px
+
+		&_big-padding-top
+			padding-top: 30px
+
+	&__category
+		margin-bottom: 40px
+
+		&_content
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+
+			@media #{$tablet}
+				justify-content: space-between
+
+		&_item
+			width: 90%
+			max-width: 550px
+			min-height: 200px
+			margin-bottom: 20px
+			flex-grow: 0
+
+			@media #{$tablet}
+				width: 47%
+
+			@media #{$large}
+				width: 24%
+
+		&_arrow
+			width: 100%
+
+		&_text
+			width: 60%
+			margin-left: 37%
+			margin-top: -20%
+			font-weight: 300
+			color: #888888
+
+	&__name-category
+		text-align: right
+		padding-right: 5px
+		font-size: 17px
+
+	&__journals
+		@media #{$tablet}
+			display: flex
+			justify-content: center
+			align-items: flex-start
+
+	&__journal
+		width: 90%
+		display: block
+		margin: auto
+
+		@media #{$tablet}
+			width: 33.4%
+			margin: 0
+
+		&_content
+			width: 90%
+			margin: auto
+			background-image: url('../images/about_us/journal/j.jpg')
+			background-color: rgba(255, 255, 255, .2)
+
+			@media #{$tablet}
+				width: 100%
+				margin: 0
+
+	&__text
+		text-align: center
+		padding-bottom: 60px
+		font-size: 18px
+		line-height: 27px
+
+		@media #{$tablet}
+			text-align: left
+			padding-left: 15px
+
+		&_bold
+			font-weight: 600
+
+		&_indent
+			@media #{$tablet-strict}
+				text-indent: 25px
+
+			@media #{$desktop}
+				text-indent: 40px
+
+		&_small-margin
+			padding-bottom: 15px
+
+
+	&__teleproject
+		width: 90%
+		margin: auto
+		border: 3px solid #222
+		box-sizing: border-box
+
+		@media #{$tablet}
+			width: 100%
+			margin: 0
+			border: 5px solid #222
+			display: flex
+			flex-wrap: wrap
+			flex-grow: 0
+
+		&_img
+			width: 100%
+
+			@media #{$tablet-strict}
+				width: 50%
+
+			@media #{$desktop}
+				width: 33.3%
+
+	&__link
+		color: #000
+		text-decoration: none
+		font-size: 20px
+		padding-left: 15px
+		font-weight: 700
+		transition: .5s
+
+		&:hover
+			color: $color_neon
+
+		&:active,
+		&:link
+			color: #000
