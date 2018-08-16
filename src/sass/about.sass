@@ -158,6 +158,8 @@
 		font-size: 17px
 
 	&__journals
+		overflow: hidden
+
 		@media #{$tablet}
 			display: flex
 			justify-content: center
@@ -175,7 +177,7 @@
 		&_content
 			width: 90%
 			margin: auto
-			background-image: url('../images/about_us/journal/j.jpg')
+			background-image: url('../images/about_us/journal/j-min.jpg')
 			background-color: rgba(255, 255, 255, .2)
 
 			@media #{$tablet}
@@ -209,7 +211,6 @@
 	&__teleproject
 		width: 90%
 		margin: auto
-		border: 3px solid #222
 		box-sizing: border-box
 
 		@media #{$tablet}
@@ -225,9 +226,12 @@
 
 			@media #{$tablet-strict}
 				width: 50%
+				height: 25vw
 
 			@media #{$desktop}
 				width: 33.3%
+				height: 15vw
+				max-height: 300px
 
 	&__link
 		color: #000
@@ -246,4 +250,4 @@
 
 		&:active,
 		&:link
-			color: #000	
+			color: #000
