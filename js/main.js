@@ -1,1 +1,1 @@
-"use strict";var main_nav=document.querySelector("#main");function hideStartMenu(){for(var n=main_nav.children,a=0;a<n.length;a++)a%2==1?n[a].classList.add("main__link_left"):n[a].classList.add("main__link_right")}main_nav.addEventListener("click",function(n){n.target});
+"use strict";
