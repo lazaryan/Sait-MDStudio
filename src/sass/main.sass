@@ -23,9 +23,16 @@
 		position: relative
 		transition: .5s
 		filter: grayscale(.9)
+		overflow: hidden
 
 		&:hover
 			filter: grayscale(0)
+
+		&:hover#arh,
+		&:hover#dis,
+		&:hover#visual,
+			background-size: 120%	
+
 
 		&:nth-child(3)
 			border-bottom: none
@@ -34,35 +41,11 @@
 			text-align: center
 			line-height: 33.4vh
 			font-size: 10vw
-			color: transparent
 			font-family: 'Century Gothic Bold', sans-serif
 			font-weight: 900
 			transition: .5s
-
-			&:hover
-				font-size: 11vw
-
-		&_translate
-			width: 170px
-			height: 30px
-			position: absolute
-			bottom: 0
-			right: -200px
-			line-height: 30px
-			color: #000
-			font-weight: 500
-			font-size: 15px
-			transition: .5s
-			background: rgba(28, 31, 31, 0.5)
-			background: linear-gradient(right, rgba(28, 31, 31, 0.5),  $color_background)
-
-			@media #{$desktop}
-				width: 200px
-				height: 40px
-				font-size: 18px
-
-		&:hover &_translate
-			right: 0
+			color: #fff
+			-webkit-text-stroke: 2px #222
 
 		&_left
 			margin-left: -150vw
@@ -75,25 +58,15 @@
 
 #arh
 	background: url('../images/start_menu/Arhitecture.jpg') no-repeat center center
-	background-size: cover
-	-webkit-text-fill-color: transparent
-	-webkit-background-clip: text
-	-webkit-text-stroke: 1px #222
+	background-size: 100%
 
 #dis
 	background: url('../images/start_menu/Design.jpg') no-repeat center
-	background-position: 0 -200px
-	background-size: cover
-	-webkit-text-fill-color: transparent
-	-webkit-background-clip: text
-	-webkit-text-stroke: 1px #222
+	background-size: 100%
 
 #visual
 	background: url('../images/start_menu/Visualization.jpg') no-repeat center center
-	background-size: cover
-	-webkit-text-fill-color: transparent
-	-webkit-background-clip: text
-	-webkit-text-stroke: 1px #222	
+	background-size: 100%
 
 .icons
 	width: 100%

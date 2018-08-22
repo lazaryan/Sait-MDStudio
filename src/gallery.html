@@ -4,16 +4,18 @@
         @@include('template_html/_meta.html')
 
         <title>Gallery</title>
+        <link rel="stylesheet" type="text/css" href="css/general/preloader.css" />
 
         <link rel="stylesheet" type="text/css" href="css/general/font.css" />
         <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
 
-        <link rel="stylesheet" type="text/css" href="css/general/preloader.css" />
         <link rel="stylesheet" type="text/css" href="css/general/nav.css" />
         <link rel="stylesheet" type="text/css" href="css/general/content.css" />
-        <link rel="stylesheet" type="text/css" href="css/general/footer.css" />
 
-        <link rel="stylesheet" type="text/css" href="css/gallery.css" />
+        <script> function c(s) {var h=document.head,l=document.createElement('link');l.type='text/css';l.rel='stylesheet';l.href=s;h.appendChild(l);}
+                c('css/general/footer.css');
+                c('css/gallery.css');
+        </script>
 </head>
 <body id="body">
         <!--preloader-->
@@ -32,20 +34,40 @@
         <main class="content" id="main">
                 <h1 class="title">Галлерея</h1>
                 <div class="information">
-                        <div class="information_grid js-grid">
-                                <div class="grid__item">
-                                        <img class="grid__image js-grid__image" src="images/gallery/1.png" alt="image">
-                                        <img class="grid__image js-grid__image" src="images/gallery/3.png" alt="image">
-                                        <img class="grid__image js-grid__image" src="images/gallery/5.png" alt="image">
+                        <div class="information_grid js-grid" id="grid">
+                                <div class="grid__item" data-number="1">
+                                        <img class="grid__image js-grid__image" 
+                                                data-folder-project="images/gallery/pr1/"
+                                                data-name-file="1.png" alt="image">
+                                        <img class="grid__image js-grid__image" 
+                                                data-folder-project="images/gallery/pr1/"
+                                                data-name-file="3.png" alt="image">
+                                        <img class="grid__image js-grid__image"
+                                                data-folder-project="images/gallery/pr1/" 
+                                                data-name-file="5.png" alt="image">
                                 </div>
-                                <div class="grid__item">
-                                        <img class="grid__image js-grid__image" src="images/gallery/3.png" alt="image">
+                                <div class="grid__item" data-number="2">
+                                        <img class="grid__image js-grid__image" 
+                                                data-folder-project="images/gallery/pr2/"
+                                                data-name-file="2.png" alt="image">
+                                        <img class="grid__image js-grid__image" 
+                                                data-folder-project="images/gallery/pr2/"
+                                                data-name-file="1.png" alt="image">
                                 </div>
-                                <div class="grid__item">
-                                        <img class="grid__image js-grid__image" src="images/gallery/5.png" alt="image">
+                                <div class="grid__item" data-number="3">
+                                        <img class="grid__image js-grid__image" 
+                                                data-folder-project="images/gallery/pr3/"
+                                                data-name-file="4.png" alt="image">
                                 </div>
-                                <div class="grid__item">
-                                        <img class="grid__image js-grid__image" src="images/gallery/3.png" alt="image">
+                                <div class="grid__item" data-number="4">
+                                        <img class="grid__image js-grid__image" 
+                                                data-folder-project="images/gallery/pr5/"
+                                                data-name-file="6.png" alt="image">
+                                </div>
+                                <div class="grid__item" data-number="5">
+                                        <img class="grid__image js-grid__image" 
+                                                data-folder-project="images/gallery/pr4/"
+                                                data-name-file="5.png" alt="image">
                                 </div>
                         </div>
                 </div>
@@ -62,14 +84,14 @@
         <!--footer-->
         @@include('template_html/_footer.html')
 
-        <!--<script src="js/lib/masonry.pkgd.min.js"></script>
-        <script>
-                let msnry = new Masonry('.js-grid', {
-                        itemSelector: '.js-grid__item',
-                        columnWidth: '.js-grid__item',
-                        percentPosition: true
-                });
-        </script>-->
+
         <script src="js/gallery.js" async></script>
+        <script> 
+                let images = document.querySelectorAll('#grid img');
+
+                for (let i = 0; i < images.length; i++) {
+                        images[i].setAttribute('src', images[i].dataset.folderProject + 'middle/' + images[i].dataset.nameFile);
+                }
+        </script>
 </body>
 </html>

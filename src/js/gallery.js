@@ -1,14 +1,30 @@
 ;"use strict";
 
-let galerry             = document.querySelector('.js-grid');
+let galerry             = document.querySelector('#grid');
 let project             = document.querySelector('#popupProject');
 let closeProject        = document.querySelector('#closePopupProject');
+
 let scrolled, timer;
+
+let min = 0;
+let max = document.querySelector('.grid__item').length - 1;
+let position = 0;
+
+let object_project = {
+        block: undefined,
+        number: 0,
+        folder: '',
+        images: []
+};
 
 galerry.addEventListener('click', (e) => {
         let target = e.target;
+
         if(target.classList.contains('js-grid__image')){
+                object_project.block = target.parentNode;
+
                 showPopupGallery();
+                setDataImages();
         }
 }, true);
 
@@ -45,4 +61,17 @@ function scrollTop(position = 0) {
         }else {
                 clearTimeout(timer);
         }
+}
+
+function setDataImages () {
+        let images = object_project.block.querySelectorAll('img');
+
+        object_project.folder = images[0].dataset.folderProject;
+        object_project.number = object_project.block.dataset.number;
+        
+        for (let i = 0; i < images.length; i++) {
+               object_project.images.push(images[i].dataset.nameFile);
+        }
+
+        console.log(object_project)
 }
