@@ -1,5 +1,5 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="600" height="180">
-    <polyline x="0px" y="0px" points="150 0, 600 0, 180 40, 10 150"/>
-    <text fill="#222" x="30%" y="53%" style="font-size: 40px">Заказать проект </text>
-    <polyline x="0px" y="0px" points="500 180, 50 180, 450 130, 600 20"/>
+<svg class="order-popup__button_images" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="600" height="180">
+    <polyline class="order-popup__button_line" x="0px" y="0px" points="150 0, 600 0, 170 20, 0 180"/>
+    <text class="order-popup__button_text" fill="#222" x="24%" y="55%" style="font-size: 45px">Заказать проект </text>
+    <polyline class="order-popup__button_line" x="0px" y="0px" points="500 180, 0 180, 480 160, 600 0"/>
 </svg>

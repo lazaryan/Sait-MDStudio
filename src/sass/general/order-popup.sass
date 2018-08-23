@@ -63,7 +63,7 @@
 
 	&__button
 		width: 70%
-		max-width: 800px
+		max-width: 600px
 		min-height: 16vw
 		margin: auto
 		display: block
@@ -89,9 +89,25 @@
 			color: #fff
 			outline: none
 
-		&-images
+		&:hover &_line,
+			fill: $color_neon
+
+		&:hover &_text
+			fill: #000
+
+		&_images
 			width: 100%
 			height: 100%
+			display: block
+			margin: auto
+
+		&_text
+			fill: #222
+			transition: .5s
+
+		&_line
+			fill: #222
+			transition: .5s
 
 .fill-background
 	width: 100vw
