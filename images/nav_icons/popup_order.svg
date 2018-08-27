@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="180"><path d="M150 0h450L180 40 10 150"/><text fill="#222" x="30%" y="53%" font-size="40">Заказать проект</text><path d="M500 180H50l400-50L600 20"/></svg>
+<svg class="order-popup__button_images" xmlns="http://www.w3.org/2000/svg" width="600" height="180"><path class="order-popup__button_line" d="M150 0h450L170 20 0 180"/><text class="order-popup__button_text" fill="#222" x="24%" y="55%" font-size="45">Заказать проект</text><path class="order-popup__button_line" d="M500 180H0l480-20L600 0"/></svg>
