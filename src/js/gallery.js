@@ -3,18 +3,20 @@
 let galerry             = document.querySelector('#grid');
 let project             = document.querySelector('#popupProject');
 let closeProject        = document.querySelector('#closePopupProject');
+let showImage           = document.querySelector('.js-project__show');
+let controller          = document.querySelector('.js-project__controller');
 
 let scrolled, timer;
 
 let min = 0;
-let max = document.querySelector('.grid__item').length - 1;
-let position = 0;
+let max = document.querySelectorAll('.js-grid__item').length - 1;
 
 let object_project = {
         block: undefined,
         number: 0,
         folder: '',
-        images: []
+        images: [],
+        position: 0
 };
 
 galerry.addEventListener('click', (e) => {
@@ -24,11 +26,53 @@ galerry.addEventListener('click', (e) => {
                 object_project.block = target.parentNode;
 
                 showPopupGallery();
-                setDataImages();
+                setDataImages(target.parentNode);
+                setGallery();
         }
 }, true);
 
 closeProject.addEventListener('click', () => hidePopupGallery());
+project.addEventListener('click', (e) => {
+        let target = e.target;
+
+        if (target.classList.contains('js-project__prev')) {
+                prevProject();
+        } else if (target.classList.contains('js-project__next')) {
+                nextProject();
+        }
+});
+
+function prevProject () {
+        let number = +object_project.number - 1;
+
+        clearData();
+        clearController();
+
+        let proj = number >= min
+                        ? document.querySelector(`.js-grid__item[data-number="${number}"]`)
+                        : document.querySelector(`.js-grid__item[data-number="${max}"]`);
+
+        setDataImages(proj);
+        setGallery();
+}
+
+function nextProject () {
+        let number = +object_project.number + 1;
+
+        clearData();
+        clearController();
+
+        console.log(number);
+
+        let proj = number <= max
+                        ? document.querySelector(`.js-grid__item[data-number="${number}"]`)
+                        : document.querySelector(`.js-grid__item[data-number="${min}"]`);
+
+        console.log(proj);
+
+        setDataImages(proj);
+        setGallery();
+}
 
 function showPopupGallery () {
         closeProject.classList.remove('_none');
@@ -51,6 +95,22 @@ function showPopupGallery () {
 function hidePopupGallery () {
         project.classList.remove('project_active');
         closeProject.classList.add('_none');
+
+        clearData();
+        clearController();
+}
+
+function clearData () {
+        object_project.block = undefined;
+        object_project.number = 0;
+        object_project.folder = '';
+        object_project.images = [];
+        object_project.position = 0;
+}
+
+function clearController () {
+        controller.querySelector('.js-project-conten').innerHTML = '';
+        controller.classList.add('_none');
 }
 
 function scrollTop(position = 0) {
@@ -63,15 +123,75 @@ function scrollTop(position = 0) {
         }
 }
 
-function setDataImages () {
-        let images = object_project.block.querySelectorAll('img');
-
-        object_project.folder = images[0].dataset.folderProject;
+function setDataImages (el) {
+        object_project.block = el;
         object_project.number = object_project.block.dataset.number;
-        
-        for (let i = 0; i < images.length; i++) {
-               object_project.images.push(images[i].dataset.nameFile);
-        }
+        object_project.folder = object_project.block.dataset.folder;
+        let images = object_project.block.querySelectorAll('.js-grid__image');
 
-        console.log(object_project)
+        for (let i = 0; i < images.length; i++) {
+                object_project.images.push(images[i].dataset.name);
+        }
+}
+
+function setGallery () {
+        showImage.innerHTML =
+                `<img class="project__images" src="${object_project.folder}big/${object_project.images[0]}" />`;
+
+        if (object_project.images.length > 1) {
+                controller.classList.remove('_none');
+
+                object_project.images.forEach((image, i) => {
+                        let img = document.createElement('img');
+                        img.className = `project__controller_image ${i == 0 ? 'project__controller_image_active' : ''} js-project__controller_image`;
+                        img.src=`${object_project.folder}small/${image}`;
+                        img.dataset.number = i;
+
+                        document.querySelector('.js-project-conten').appendChild(img);
+                })
+        }
+}
+
+controller.addEventListener('click', (e) => {
+         let target = e.target;
+
+        if (target.classList.contains('js-controller-prev')) {
+                prevImage();
+        } else if (target.classList.contains('js-controller-next')) {
+                nextImage();
+        } else if (target.classList.contains('js-project__controller_image')) {
+                checkImage(target);
+        }
+})
+
+function checkImage (el) {
+        object_project.position = el.dataset.number;
+
+        changeImage();
+}
+
+function prevImage () {
+        object_project.position -= 1;
+
+        if (object_project.position < 0) object_project.position = object_project.images.length - 1;
+
+        changeImage();
+}
+
+function nextImage () {
+        object_project.position = +object_project.position + 1;
+
+        if (object_project.position > object_project.images.length - 1) object_project.position = 0;
+
+        changeImage();
+}
+
+function changeImage () {
+        document.querySelector('.project__controller_image_active').classList.remove('project__controller_image_active');
+        document.querySelectorAll('.js-project__controller_image')[object_project.position]
+                .classList.add('project__controller_image_active');
+
+        showImage.innerHTML =
+                `<img class="project__images"
+                        src="${object_project.folder}big/${object_project.images[object_project.position]}" />`;
 }

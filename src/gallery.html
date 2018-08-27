@@ -35,50 +35,37 @@
                 <h1 class="title">Галлерея</h1>
                 <div class="information">
                         <div class="information_grid js-grid" id="grid">
-                                <div class="grid__item" data-number="1">
-                                        <img class="grid__image js-grid__image" 
-                                                data-folder-project="images/gallery/pr1/"
-                                                data-name-file="1.png" alt="image">
-                                        <img class="grid__image js-grid__image" 
-                                                data-folder-project="images/gallery/pr1/"
-                                                data-name-file="3.png" alt="image">
+                                <div class="grid__item js-grid__item" data-number="0" data-folder="images/gallery/pr1/">
                                         <img class="grid__image js-grid__image"
-                                                data-folder-project="images/gallery/pr1/" 
-                                                data-name-file="5.png" alt="image">
+                                                src="images/gallery/pr1/middle/1.png" data-name="1.png" alt="image">
+                                        <img class="grid__image js-grid__image"
+                                                src="images/gallery/pr1/middle/3.png" data-name="3.png" alt="image">
+                                        <img class="grid__image js-grid__image"
+                                                src="images/gallery/pr1/middle/2.png" data-name="2.png" alt="image">
                                 </div>
-                                <div class="grid__item" data-number="2">
-                                        <img class="grid__image js-grid__image" 
-                                                data-folder-project="images/gallery/pr2/"
-                                                data-name-file="2.png" alt="image">
-                                        <img class="grid__image js-grid__image" 
-                                                data-folder-project="images/gallery/pr2/"
-                                                data-name-file="1.png" alt="image">
-                                </div>
-                                <div class="grid__item" data-number="3">
-                                        <img class="grid__image js-grid__image" 
-                                                data-folder-project="images/gallery/pr3/"
-                                                data-name-file="4.png" alt="image">
-                                </div>
-                                <div class="grid__item" data-number="4">
-                                        <img class="grid__image js-grid__image" 
-                                                data-folder-project="images/gallery/pr5/"
-                                                data-name-file="6.png" alt="image">
-                                </div>
-                                <div class="grid__item" data-number="5">
-                                        <img class="grid__image js-grid__image" 
-                                                data-folder-project="images/gallery/pr4/"
-                                                data-name-file="5.png" alt="image">
+                                <div class="grid__item js-grid__item" data-number="1" data-folder="images/gallery/pr2/">
+                                        <img class="grid__image js-grid__image"
+                                                src="images/gallery/pr2/middle/2.png" data-name="2.png" alt="image">
                                 </div>
                         </div>
                 </div>
         </main>
         <!--finish main block-->
 
-        <div class="close_project _none" id="closePopupProject"></div>
+        <div class="close_project _none" id="closePopupProject">
+                <button class="close_project_button js-close_project_button"></button>
+        </div>
         <div class="project" id="popupProject" style="top: 0">
-                <div class="project__prev"><div class="project__line"></div></div>
-                <div class="project__content"></div>
-                <div class="project__next"><div class="project__line"></div></div>
+                <div class="project__prev js-project__prev">1</div>
+                <div class="project__content">
+                        <div class="project__show js-project__show"></div>
+                        <div class="project__controller _none js-project__controller">
+                                <div class="project__controller_prev js-controller-prev"></div>
+                                <div class="project__controller_content js-project-conten"></div>
+                                <div class="project__controller_next js-controller-next"></div>
+                        </div>
+                </div>
+                <div class="project__next js-project__next">sd2</div>
         </div>
 
         <!--footer-->
@@ -86,12 +73,5 @@
 
 
         <script src="js/gallery.js" async></script>
-        <script> 
-                let images = document.querySelectorAll('#grid img');
-
-                for (let i = 0; i < images.length; i++) {
-                        images[i].setAttribute('src', images[i].dataset.folderProject + 'middle/' + images[i].dataset.nameFile);
-                }
-        </script>
 </body>
 </html>
