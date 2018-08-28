@@ -1,0 +1,1 @@
+"use strict";var button=document.getElementById("orderSubmit");button.addEventListener("submit",function(){alert("esss")});
