@@ -84,9 +84,9 @@ function showPopupGallery () {
         scrolled = scroll;
         if (scroll > 250) {
                 scrollTop(scroll - (project.clientHeight / 2));
-                project.setAttribute('style', `top: ${(screen.height / 2) - (project.clientHeight / 2)}px;`);
+                project.setAttribute('style', `top: ${(screen.height / 2) - (project.clientHeight / 2) + 100}px;`);
         } else {
-                project.setAttribute('style', `top: ${(screen.height / 2) - (project.clientHeight / 2)}px;`);
+                project.setAttribute('style', `top: ${(screen.height / 2) - (project.clientHeight / 2) + 100}px;`);
         }
 
         project.classList.add('project_active');
