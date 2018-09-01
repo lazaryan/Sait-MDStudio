@@ -218,6 +218,8 @@
 			&:focus
 				border-bottom: 1px solid $color_neon
 
+		&_input,
+		&_textarea
 			&::-webkit-input-placeholder
 				text-indent: 0
 				transition: .8s
@@ -250,6 +252,24 @@
 			&:focus:-ms-input-placeholder
 				text-indent: 15%
 				color: $color_neon
+
+		&_textarea
+			width: 100%
+			margin-bottom: 20px
+			height: 200px
+			border: none
+			background-color: transparent
+			border: 1px solid #000
+			padding: 10px
+			box-sizing: border-box
+			outline: none
+			font-size: 20px
+			transition: .5s
+			resize: none
+
+			&:hover,
+			&:focus
+				border: 1px solid $color_neon
 
 	&__submit
 		width: 70%

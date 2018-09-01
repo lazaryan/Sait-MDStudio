@@ -4,16 +4,16 @@
         @@include('template_html/_meta.html')
 
         <title>MDStudio</title>
-        <link rel="stylesheet" type="text/css" href="css/general/preloader.css" />
-        <style>*{margin: 0; padding: 0}</style>
 
-        <link rel="stylesheet" type="text/css" href="css/general/font.css" />
+        <style>*{margin: 0; padding: 0}</style>
+        <link rel="stylesheet" type="text/css" href="css/general/preloader.css" />
         <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
 
-        <script> function c(s) {var h=document.head,l=document.createElement('link');l.type='text/css';l.rel='stylesheet';l.href=s;h.appendChild(l);}
-                c('css/general/nav.css');
-                c('css/main.css');
-        </script>
+        <noscript id="deferred-styles">
+                <link rel="stylesheet" type="text/css" href="css/general/font.css" />
+                <link rel="stylesheet" type="text/css" href="css/general/nav.css" />
+                <link rel="stylesheet" type="text/css" href="css/main.css" />
+        </noscript>
 </head>
 <body id="body">
         <!--preloader-->
@@ -39,5 +39,10 @@
                         <p class="main__link_text">3D visualization</p>
                 </a>
         </main>
+
+        <!--get styles-->
+        <script> 
+                @@include('./js/support/_load_style.js')
+        </script>
 </body>
 </html>

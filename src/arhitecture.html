@@ -5,18 +5,16 @@
 
         <title>Arhitecture</title>
         <link rel="stylesheet" type="text/css" href="css/general/preloader.css" />
-
-        <link rel="stylesheet" type="text/css" href="css/general/font.css" />
         <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
-
-        <link rel="stylesheet" type="text/css" href="css/general/nav.css" />
         <link rel="stylesheet" type="text/css" href="css/general/content.css" />
 
-        <script> function c(s) {var h=document.head,l=document.createElement('link');l.type='text/css';l.rel='stylesheet';l.href=s;h.appendChild(l);}
-                c('css/order.css');
-                c('css/general/order-popup.css');
-                c('css/general/footer.css');
-        </script>
+        <noscript id="deferred-styles">
+                <link rel="stylesheet" type="text/css" href="css/general/font.css" />
+                <link rel="stylesheet" type="text/css" href="css/general/nav.css" />
+                <link rel="stylesheet" type="text/css" href="css/order.css" />
+                <link rel="stylesheet" type="text/css" href="css/general/order-popup.css" />
+                <link rel="stylesheet" type="text/css" href="css/general/footer.css" />
+        </noscript>
 </head>
 <body id="body">
         <!--preloader-->
@@ -95,5 +93,12 @@
 
         <!--footer-->
         @@include('template_html/_footer.html')
+
+        <!--get styles-->
+        <script> 
+                @@include('./js/support/_load_style.js')
+        </script>
+
+        <script src="js/support/images.js" defer></script>
 </body>
 </html>

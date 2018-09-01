@@ -82,11 +82,11 @@ function showPopupGallery () {
                         (document.body && document.body.scrollTop);
 
         scrolled = scroll;
-        if (scroll > 250) {
+        if (scroll > 500) {
                 scrollTop(scroll - (project.clientHeight / 2));
-                project.setAttribute('style', `top: ${(screen.height / 2) - (project.clientHeight / 2) + 100}px;`);
+                project.setAttribute('style', `top: ${(screen.height / 2) - (project.clientHeight ?  (project.clientHeight/ 2) : (screen.height / 3) )}px;`);
         } else {
-                project.setAttribute('style', `top: ${(screen.height / 2) - (project.clientHeight / 2) + 100}px;`);
+                project.setAttribute('style', `top: ${(screen.height / 2) - (project.clientHeight ?  (project.clientHeight/ 2) : (screen.height / 3) )}px;`);
         }
 
         project.classList.add('project_active');

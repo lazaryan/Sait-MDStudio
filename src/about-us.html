@@ -4,20 +4,19 @@
         @@include('template_html/_meta.html')
 
         <title>About</title>
+        
         <link rel="stylesheet" type="text/css" href="css/general/preloader.css" />
-
-        <link rel="stylesheet" type="text/css" href="css/general/font.css" />
         <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
-
-        <link rel="stylesheet" type="text/css" href="css/general/nav.css" />
         <link rel="stylesheet" type="text/css" href="css/general/content.css" />
 
-        <script> function c(s) {var h=document.head,l=document.createElement('link');l.type='text/css';l.rel='stylesheet';l.href=s;h.appendChild(l);}
-                c('css/order.css');
-                c('css/general/order-popup.css');
-                c('css/about.css');
-                c('css/general/footer.css');
-        </script>
+        <noscript id="deferred-styles">
+                <link rel="stylesheet" type="text/css" href="css/general/font.css" />
+                <link rel="stylesheet" type="text/css" href="css/about.css" />
+                <link rel="stylesheet" type="text/css" href="css/general/nav.css" />
+                <link rel="stylesheet" type="text/css" href="css/order.css" />
+                <link rel="stylesheet" type="text/css" href="css/general/order-popup.css" />
+                <link rel="stylesheet" type="text/css" href="css/general/footer.css" />
+        </noscript>
 </head>
 <body id="body">
         <!--preloader-->
@@ -34,7 +33,7 @@
 
         <!--start main block-->
         <main class="content" id="main">
-                <h1 class="title">О нас</h1>
+                <h1 class="title">О <span class="title_bold">нас</span></h1>
                 <div class="information">
                         <section class="about__section">
                                 <div class="about">
@@ -113,6 +112,11 @@
 
         <!--footer-->
         @@include('template_html/_footer.html')
+
+        <!--get styles-->
+        <script> 
+                @@include('./js/support/_load_style.js')
+        </script>
 
         <script src="js/support/images.js" defer></script>
 </body>

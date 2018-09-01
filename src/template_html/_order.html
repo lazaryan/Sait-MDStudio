@@ -6,28 +6,28 @@
                                 <input type="radio" value="1000" name="type_order" id="type_order_1" class="_none order__type_input" checked />
                                 <label for="type_order_1" class="order__type_check">
                                         <div class="order__type_name">Архитектура</div>
-                                        <img src="./images/order/1.jpg" alt="image arhitecture" class="order__type_image" />
+                                        <img data-src="./images/order/1.jpg" alt="image arhitecture" class="order__type_image" />
                                 </label>
                         </div>
                         <div class="order__type_item">
                                 <input type="radio" value="1500" name="type_order" id="type_order_2" class="_none order__type_input" />
                                 <label for="type_order_2" class="order__type_check">
                                         <p class="order__type_name">Дизайн интерьера</p>
-                                        <img src="./images/order/2.jpg" alt="image interior design" class="order__type_image" />
+                                        <img data-src="./images/order/2.jpg" alt="image interior design" class="order__type_image" />
                                 </label>
                         </div>
                         <div class="order__type_item">
                                 <input type="radio" value="2000" name="type_order" id="type_order_3" class="_none order__type_input" />
                                 <label for="type_order_3" class="order__type_check">
                                         <p class="order__type_name">Архитектура + Дизайн</p>
-                                        <img src="./images/order/3.jpg" alt="image arhitecture and design" class="order__type_image" />
+                                        <img data-src="./images/order/3.jpg" alt="image arhitecture and design" class="order__type_image" />
                                 </label>
                         </div>
                         <div class="order__type_item">
                                 <input type="radio" value="1700" name="type_order" id="type_order_4" class="_none order__type_input" />
                                 <label for="type_order_4" class="order__type_check">
                                         <p class="order__type_name">3D визуализация</p>
-                                        <img src="./images/order/3.jpg" alt="image 3d visualization" class="order__type_image" />
+                                        <img data-src="./images/order/3.jpg" alt="image 3d visualization" class="order__type_image" />
                                 </label>
                         </div>
                 </main>
@@ -58,7 +58,10 @@
                         <input type="text" class="order__form_input" placeholder="Номер телефона" id="phone" required="required" name="phone" maxlength="80" />
                         <input type="text" class="order__form_input" placeholder="Электронная почта" id="mail" required="required" name="mail" maxlength="80" />
                         <input type="text" class="order__form_input" placeholder="Ваше местоположение" id="location" required="required" name="location" maxlength="255" />
+                        <textarea class="order__form_textarea" id="message" name="message" placeholder="Сообщение" required="required"></textarea>
                 </main>
         </section>
-        <input type="submit" class="order__submit" id="order__submit" />
+        <input type="submit" class="order__submit" id="orderSubmit" />
 </form>
+
+<script src="./js/order.js" async></script>
